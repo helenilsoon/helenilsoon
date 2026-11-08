@@ -6,26 +6,30 @@
 
 ### ⚡ Stack de Produção & Conexões
 
-<table width="100%">
+<table>
   <tr>
-    <!-- Coluna 1: Stack de Produção em Card Neon com Ícones Vetoriais -->
-    <td width="46%" valign="top">
-      <img src="./assets/card_stack.svg" width="100%" alt="Stack de Produção Neon" />
+    <!-- Coluna 1: Stack de Produção Neon com Ícones Vetoriais (~35% / 350px) -->
+    <td width="350" valign="top">
+      <img src="./assets/card_stack.svg" width="350" alt="Stack de Produção Neon" />
     </td>
-    <!-- Coluna 2: Conexões Oficiais & Spotify Player Neon -->
-    <td width="54%" valign="top">
+    <!-- Coluna 2: Conexões Oficiais, Organização e Spotify (~65% / 490px) -->
+    <td width="490" valign="top">
       <a href="https://helenilsoon.github.io/portifolio/" target="_blank">
-        <img src="./assets/btn_portfolio.svg" width="100%" alt="Portfólio Live" />
+        <img src="./assets/btn_portfolio.svg" width="490" alt="Portfólio Live" />
       </a>
-      <p></p>
+      <br/><br/>
       <a href="mailto:helenilsoon@gmail.com">
-        <img src="./assets/btn_email.svg" width="100%" alt="E-mail Direto" />
+        <img src="./assets/btn_email.svg" width="490" alt="E-mail Direto" />
       </a>
-      <p></p>
-      <img src="./assets/btn_location.svg" width="100%" alt="Localização" />
-      <p></p>
+      <br/><br/>
+      <a href="https://github.com/WebuildSoft" target="_blank">
+        <img src="./assets/btn_org.svg" width="490" alt="Organização Oficial WebuildSoft" />
+      </a>
+      <br/><br/>
+      <img src="./assets/btn_location.svg" width="490" alt="Localização" />
+      <br/><br/>
       <a href="https://open.spotify.com" target="_blank">
-        <img src="./assets/spotify.svg" width="100%" alt="Coding Soundtrack Spotify" />
+        <img src="./assets/spotify.svg" width="490" alt="Coding Soundtrack Spotify" />
       </a>
     </td>
   </tr>
