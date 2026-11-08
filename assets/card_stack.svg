@@ -53,10 +53,9 @@
 
   <!-- Container Base Card -->
   <rect x="1.5" y="1.5" width="422" height="392" rx="14" fill="#070a12" stroke="url(#stackBorder)" stroke-width="1.5" />
+  <rect class="comet-beam" x="1.5" y="1.5" width="422" height="392" rx="14" fill="none" stroke="url(#neonCometGrad)" stroke-width="2.6" stroke-linecap="round" filter="url(#neonCometGlow)" pointer-events="none" />
 
   <!-- Feixe Cometa Neon Viajante (Card 2: 1.5s - 3.0s) -->
-  <rect class="comet-beam" x="1.5" y="1.5" width="422" height="392" rx="14" fill="none" stroke="url(#neonCometGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#neonCometGlow)" pointer-events="none" />
-  
   <!-- Ambient Neon Aura -->
   <circle cx="390" cy="40" r="45" fill="#00f0ff" fill-opacity="0.08" filter="url(#stackGlow)" />
   <circle cx="35" cy="350" r="45" fill="#a855f7" fill-opacity="0.06" filter="url(#stackGlow)" />

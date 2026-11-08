@@ -40,10 +40,9 @@
 
   <!-- Base Card Static Border -->
   <rect x="1" y="1" width="423" height="54" rx="12" fill="#032541" fill-opacity="0.4" stroke="#0284c7" stroke-opacity="0.25" stroke-width="1.2" />
+  <rect class="comet-beam" x="1.5" y="1.5" width="423" height="54" rx="12" fill="none" stroke="url(#neonCometGrad)" stroke-width="2.6" stroke-linecap="round" filter="url(#neonCometGlow)" pointer-events="none" />
   
   <!-- Feixe Cometa Neon Multicor (Ciano, Azul, Roxo e Magenta) -->
-  <rect x="1" y="1" width="423" height="54" rx="12" fill="none" stroke="url(#neonCometGrad)" stroke-width="2.5" stroke-linecap="round" class="comet-beam" filter="url(#neonCometGlow)" pointer-events="none" />
-
   <!-- Icon Box -->
   <g transform="translate(14, 11)">
     <rect width="34" height="34" rx="9" fill="#082f49" stroke="#0284c7" stroke-opacity="0.5" stroke-width="1" />

@@ -80,10 +80,9 @@
 
   <!-- Background Base Container -->
   <rect x="2" y="2" width="896" height="276" rx="16" fill="url(#bgDark)" stroke="url(#cardBorder)" stroke-width="1.5" />
+  <rect class="comet-beam" x="1.5" y="1.5" width="896" height="276" rx="16" fill="none" stroke="url(#neonCometGrad)" stroke-width="2.6" stroke-linecap="round" filter="url(#neonCometGlow)" pointer-events="none" />
 
   <!-- Feixe Cometa Neon Viajante (Card 1: 0.0s - 1.5s) -->
-  <rect class="comet-beam" x="2" y="2" width="896" height="276" rx="16" fill="none" stroke="url(#neonCometGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#neonCometGlow)" pointer-events="none" />
-
   <!-- Ambient Light Orbs -->
   <circle cx="830" cy="40" r="90" fill="#06b6d4" fill-opacity="0.12" filter="url(#cyanGlow)" />
   <circle cx="70" cy="240" r="80" fill="#d946ef" fill-opacity="0.08" filter="url(#cyanGlow)" />
