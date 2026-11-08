@@ -1,49 +1,94 @@
 <svg width="100%" height="auto" viewBox="0 0 420 146" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <filter id="fuchsiaGlow" x="-20%" y="-20%" width="140%" height="140%">
+    <filter id="fuchsiaGlow" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="4" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
+    <linearGradient id="cardBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d946ef" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#a855f7" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0.7" />
+    </linearGradient>
     <style>
-      .card-title { font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 14px; font-weight: bold; fill: #ffffff; }
-      .card-desc { font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 11px; fill: #8b949e; }
+      .card-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 14px; font-weight: 700; fill: #ffffff; }
+      .card-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; fill: #94a3b8; }
       .tag-txt { font-family: 'Fira Code', monospace; font-size: 9px; font-weight: 600; fill: #f5d0fe; }
       .category { font-family: 'Fira Code', monospace; font-size: 10px; font-weight: bold; fill: #e879f9; letter-spacing: 0.5px; }
-      .arrow { font-family: 'Fira Code', monospace; font-size: 12px; fill: #e879f9; font-weight: bold; }
+      .arrow { font-family: 'Fira Code', monospace; font-size: 11.5px; fill: #e879f9; font-weight: bold; }
+
+      @keyframes float3D {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-4px) rotate(-2deg); }
+      }
+      @keyframes spin3D {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .holo-3d {
+        animation: float3D 3.6s ease-in-out infinite;
+        transform-origin: 375px 42px;
+      }
+      .spin-ring {
+        animation: spin3D 8.5s linear infinite;
+        transform-origin: 375px 42px;
+      }
     </style>
   </defs>
 
   <!-- Background Card -->
-  <rect x="1.5" y="1.5" width="417" height="143" rx="14" fill="#0c0f17" stroke="#d946ef" stroke-opacity="0.4" stroke-width="1.5" />
+  <rect x="1.5" y="1.5" width="417" height="143" rx="14" fill="#080c14" stroke="url(#cardBorder)" stroke-width="1.4" />
 
   <!-- Ambient Light -->
-  <circle cx="390" cy="25" r="40" fill="#d946ef" fill-opacity="0.08" filter="url(#fuchsiaGlow)" />
+  <circle cx="375" cy="42" r="35" fill="#d946ef" fill-opacity="0.08" filter="url(#fuchsiaGlow)" />
 
-  <!-- Vector Shopping Bag Icon -->
-  <rect x="20" y="18" width="26" height="26" rx="6" fill="#701a75" fill-opacity="0.7" stroke="#d946ef" stroke-opacity="0.5" />
-  <rect x="25" y="26" width="16" height="13" rx="2" stroke="#f472b6" stroke-width="1.4" fill="none" />
-  <path d="M29 26V23C29 21.9 29.9 21 31 21H35C36.1 21 37 21.9 37 23V26" stroke="#f472b6" stroke-width="1.4" />
+  <!-- Vector Shopping Bag Icon Left -->
+  <rect x="20" y="18" width="28" height="28" rx="7" fill="#701a75" fill-opacity="0.7" stroke="#d946ef" stroke-opacity="0.5" stroke-width="1.2" />
+  <rect x="26" y="27" width="16" height="13" rx="2" stroke="#f472b6" stroke-width="1.4" fill="none" />
+  <path d="M30 27V24C30 22.9 30.9 22 32 22H36C37.1 22 38 22.9 38 24V27" stroke="#f472b6" stroke-width="1.4" />
 
-  <text x="54" y="30" class="category">E-COMMERCE &amp; STORE</text>
-  <text x="54" y="42" class="arrow">lenamimos.com.br ↗</text>
+  <text x="56" y="30" class="category">E-COMMERCE &amp; STORE</text>
+  <text x="56" y="42" class="arrow">lenamimos.com.br ↗</text>
+
+  <!-- ================= 3D HOLOGRAPHIC GIFT / PACKAGE CUBE (TOP RIGHT) ================= -->
+  <!-- Anel Orbital 3D -->
+  <g class="spin-ring">
+    <ellipse cx="375" cy="42" rx="27" ry="10" stroke="#f472b6" stroke-width="1" stroke-dasharray="5 3 2 3" stroke-opacity="0.6" fill="none" filter="url(#fuchsiaGlow)" />
+    <circle cx="402" cy="42" r="2.2" fill="#e879f9" />
+  </g>
+
+  <!-- Caixa de Presente 3D Isométrica -->
+  <g class="holo-3d">
+    <!-- Top Face -->
+    <polygon points="375,28 390,36 375,44 360,36" fill="#d946ef" fill-opacity="0.75" stroke="#f5d0fe" stroke-width="1" />
+    <!-- Left Face -->
+    <polygon points="360,36 375,44 375,58 360,50" fill="#701a75" fill-opacity="0.85" stroke="#d946ef" stroke-width="1" />
+    <!-- Right Face -->
+    <polygon points="375,44 390,36 390,50 375,58" fill="#831843" fill-opacity="0.85" stroke="#ec4899" stroke-width="1" />
+    
+    <!-- Fita Neon Cruzada no Topo -->
+    <line x1="367.5" y1="32" x2="382.5" y2="40" stroke="#ffffff" stroke-width="1.2" />
+    <line x1="382.5" y1="32" x2="367.5" y2="40" stroke="#ffffff" stroke-width="1.2" />
+    <!-- Laço Neon 3D -->
+    <circle cx="375" cy="36" r="2.8" fill="#f43f5e" filter="url(#fuchsiaGlow)" />
+  </g>
 
   <!-- Title -->
-  <text x="20" y="70" class="card-title">Lena Mimos • Loja Virtual</text>
+  <text x="20" y="73" class="card-title">Lena Mimos • Loja Virtual</text>
 
   <!-- Description -->
-  <text x="20" y="90" class="card-desc">Loja virtual com checkout transparente Pix via Mercado Pago,</text>
-  <text x="20" y="105" class="card-desc">Cloudflare R2 Storage e cálculo dinâmico de frete.</text>
+  <text x="20" y="93" class="card-desc">Loja virtual com checkout transparente Pix via Mercado Pago,</text>
+  <text x="20" y="108" class="card-desc">Cloudflare R2 Storage e cálculo dinâmico de frete.</text>
 
   <!-- Chips -->
-  <g transform="translate(20, 116)">
+  <g transform="translate(20, 117)">
     <rect width="66" height="20" rx="5" fill="#701a75" fill-opacity="0.5" stroke="#d946ef" stroke-opacity="0.3" />
     <text x="33" y="13.5" text-anchor="middle" class="tag-txt">Next.js</text>
   </g>
-  <g transform="translate(92, 116)">
+  <g transform="translate(92, 117)">
     <rect width="90" height="20" rx="5" fill="#701a75" fill-opacity="0.5" stroke="#d946ef" stroke-opacity="0.3" />
     <text x="45" y="13.5" text-anchor="middle" class="tag-txt">Mercado Pago</text>
   </g>
-  <g transform="translate(188, 116)">
+  <g transform="translate(188, 117)">
     <rect width="86" height="20" rx="5" fill="#701a75" fill-opacity="0.5" stroke="#d946ef" stroke-opacity="0.3" />
     <text x="43" y="13.5" text-anchor="middle" class="tag-txt">Cloudflare R2</text>
   </g>

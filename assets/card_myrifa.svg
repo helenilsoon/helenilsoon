@@ -1,50 +1,90 @@
 <svg width="100%" height="auto" viewBox="0 0 420 146" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <filter id="emeraldGlow" x="-20%" y="-20%" width="140%" height="140%">
+    <filter id="emeraldGlow" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="4" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
+    <linearGradient id="cardBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#047857" stop-opacity="0.3" />
+    </linearGradient>
     <style>
-      .card-title { font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 14px; font-weight: bold; fill: #ffffff; }
-      .card-desc { font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 11px; fill: #8b949e; }
+      .card-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 14px; font-weight: 700; fill: #ffffff; }
+      .card-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; fill: #94a3b8; }
       .tag-txt { font-family: 'Fira Code', monospace; font-size: 9px; font-weight: 600; fill: #34d399; }
       .category { font-family: 'Fira Code', monospace; font-size: 10px; font-weight: bold; fill: #34d399; letter-spacing: 0.5px; }
-      .arrow { font-family: 'Fira Code', monospace; font-size: 12px; fill: #34d399; font-weight: bold; }
+      .arrow { font-family: 'Fira Code', monospace; font-size: 11.5px; fill: #34d399; font-weight: bold; }
+
+      @keyframes float3D {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-4px) rotate(2deg); }
+      }
+      @keyframes spin3DRing {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .holo-3d {
+        animation: float3D 3.5s ease-in-out infinite;
+        transform-origin: 375px 42px;
+      }
+      .ring-rot {
+        animation: spin3DRing 8s linear infinite;
+        transform-origin: 375px 42px;
+      }
     </style>
   </defs>
 
   <!-- Background Card -->
-  <rect x="1.5" y="1.5" width="417" height="143" rx="14" fill="#0c0f17" stroke="#10b981" stroke-opacity="0.4" stroke-width="1.5" />
+  <rect x="1.5" y="1.5" width="417" height="143" rx="14" fill="#080c14" stroke="url(#cardBorder)" stroke-width="1.4" />
 
   <!-- Ambient Light -->
-  <circle cx="390" cy="25" r="40" fill="#10b981" fill-opacity="0.08" filter="url(#emeraldGlow)" />
+  <circle cx="375" cy="42" r="35" fill="#10b981" fill-opacity="0.08" filter="url(#emeraldGlow)" />
 
-  <!-- Header line -->
-  <!-- Vector Technical Icon (Ticket / Campaign Badge) -->
-  <rect x="20" y="18" width="26" height="26" rx="6" fill="#064e3b" fill-opacity="0.7" stroke="#10b981" stroke-opacity="0.5" />
-  <path d="M28 27H38M28 31H34M28 35H36" stroke="#34d399" stroke-width="1.8" stroke-linecap="round" />
+  <!-- Technical Icon Box Left -->
+  <rect x="20" y="18" width="28" height="28" rx="7" fill="#064e3b" fill-opacity="0.7" stroke="#10b981" stroke-opacity="0.5" stroke-width="1.2" />
+  <path d="M28 27H38M28 32H34M28 37H36" stroke="#34d399" stroke-width="1.8" stroke-linecap="round" />
   
-  <text x="54" y="30" class="category">PLATAFORMA SAAS</text>
-  <text x="54" y="42" class="arrow">myrifa.com.br ↗</text>
+  <text x="56" y="30" class="category">PLATAFORMA SAAS</text>
+  <text x="56" y="42" class="arrow">myrifa.com.br ↗</text>
+
+  <!-- ================= 3D HOLOGRAPHIC COIN / TICKET CUBE (TOP RIGHT) ================= -->
+  <!-- Anel Orbital 3D -->
+  <g class="ring-rot">
+    <ellipse cx="375" cy="42" rx="28" ry="10" stroke="#34d399" stroke-width="1" stroke-dasharray="4 3" stroke-opacity="0.6" fill="none" filter="url(#emeraldGlow)" />
+    <circle cx="403" cy="42" r="2" fill="#10b981" />
+  </g>
+
+  <!-- Objeto 3D Isométrico Flutuante (Cubo de Sorteio/Cotas) -->
+  <g class="holo-3d">
+    <!-- Top Face -->
+    <polygon points="375,28 390,36 375,44 360,36" fill="#10b981" fill-opacity="0.75" stroke="#34d399" stroke-width="1" />
+    <!-- Left Face -->
+    <polygon points="360,36 375,44 375,60 360,52" fill="#064e3b" fill-opacity="0.85" stroke="#10b981" stroke-width="1" />
+    <!-- Right Face -->
+    <polygon points="375,44 390,36 390,52 375,60" fill="#047857" fill-opacity="0.85" stroke="#34d399" stroke-width="1" />
+    
+    <!-- Centro / Emblema Pix 3D -->
+    <circle cx="375" cy="36" r="3" fill="#ffffff" filter="url(#emeraldGlow)" />
+  </g>
 
   <!-- Title -->
-  <text x="20" y="70" class="card-title">MyRifa • Campanhas &amp; Rifas Online</text>
+  <text x="20" y="73" class="card-title">MyRifa • Campanhas &amp; Rifas Online</text>
 
   <!-- Description -->
-  <text x="20" y="90" class="card-desc">Plataforma para campanhas com Pix automático, Supabase,</text>
-  <text x="20" y="105" class="card-desc">Cloudflare R2 e gestão de cotas em tempo real.</text>
+  <text x="20" y="93" class="card-desc">Plataforma para campanhas com Pix automático, Supabase,</text>
+  <text x="20" y="108" class="card-desc">Cloudflare R2 e gestão de cotas em tempo real.</text>
 
   <!-- Chips -->
-  <g transform="translate(20, 116)">
+  <g transform="translate(20, 117)">
     <rect width="66" height="20" rx="5" fill="#064e3b" fill-opacity="0.4" stroke="#10b981" stroke-opacity="0.3" />
     <text x="33" y="13.5" text-anchor="middle" class="tag-txt">Next.js 14</text>
   </g>
-  <g transform="translate(92, 116)">
+  <g transform="translate(92, 117)">
     <rect width="66" height="20" rx="5" fill="#064e3b" fill-opacity="0.4" stroke="#10b981" stroke-opacity="0.3" />
     <text x="33" y="13.5" text-anchor="middle" class="tag-txt">Supabase</text>
   </g>
-  <g transform="translate(164, 116)">
-    <rect width="90" height="20" rx="5" fill="#064e3b" fill-opacity="0.4" stroke="#10b981" stroke-opacity="0.3" />
-    <text x="45" y="13.5" text-anchor="middle" class="tag-txt">Pix Automático</text>
+  <g transform="translate(164, 117)">
+    <rect width="92" height="20" rx="5" fill="#064e3b" fill-opacity="0.4" stroke="#10b981" stroke-opacity="0.3" />
+    <text x="46" y="13.5" text-anchor="middle" class="tag-txt">Pix Automático</text>
   </g>
 </svg>

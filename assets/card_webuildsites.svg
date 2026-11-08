@@ -1,51 +1,95 @@
 <svg width="100%" height="auto" viewBox="0 0 420 146" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+    <filter id="cyanGlow" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="4" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
+    <linearGradient id="cardBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#0284c7" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.7" />
+    </linearGradient>
     <style>
-      .card-title { font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 14px; font-weight: bold; fill: #ffffff; }
-      .card-desc { font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 11px; fill: #8b949e; }
+      .card-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 14px; font-weight: 700; fill: #ffffff; }
+      .card-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; fill: #94a3b8; }
       .tag-txt { font-family: 'Fira Code', monospace; font-size: 9px; font-weight: 600; fill: #67e8f9; }
       .category { font-family: 'Fira Code', monospace; font-size: 10px; font-weight: bold; fill: #22d3ee; letter-spacing: 0.5px; }
-      .arrow { font-family: 'Fira Code', monospace; font-size: 12px; fill: #22d3ee; font-weight: bold; }
+      .arrow { font-family: 'Fira Code', monospace; font-size: 11.5px; fill: #22d3ee; font-weight: bold; }
+
+      @keyframes float3D {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-4px) rotate(-1.5deg); }
+      }
+      @keyframes radarSpin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .holo-3d {
+        animation: float3D 3.8s ease-in-out infinite;
+        transform-origin: 375px 42px;
+      }
+      .radar-ring {
+        animation: radarSpin 9s linear infinite;
+        transform-origin: 375px 42px;
+      }
     </style>
   </defs>
 
   <!-- Background Card -->
-  <rect x="1.5" y="1.5" width="417" height="143" rx="14" fill="#0c0f17" stroke="#06b6d4" stroke-opacity="0.4" stroke-width="1.5" />
+  <rect x="1.5" y="1.5" width="417" height="143" rx="14" fill="#080c14" stroke="url(#cardBorder)" stroke-width="1.4" />
 
   <!-- Ambient Light -->
-  <circle cx="390" cy="25" r="40" fill="#06b6d4" fill-opacity="0.08" filter="url(#cyanGlow)" />
+  <circle cx="375" cy="42" r="35" fill="#00f0ff" fill-opacity="0.08" filter="url(#cyanGlow)" />
 
-  <!-- Vector Browser Window Icon -->
-  <rect x="20" y="18" width="26" height="26" rx="6" fill="#083344" fill-opacity="0.7" stroke="#06b6d4" stroke-opacity="0.5" />
-  <rect x="24" y="24" width="18" height="14" rx="2" stroke="#22d3ee" stroke-width="1.4" fill="none" />
-  <line x1="24" y1="28" x2="42" y2="28" stroke="#22d3ee" stroke-width="1.2" />
-  <circle cx="27" cy="26" r="0.8" fill="#22d3ee" />
-  <circle cx="30" cy="26" r="0.8" fill="#22d3ee" />
+  <!-- Vector Browser Window Icon Left -->
+  <rect x="20" y="18" width="28" height="28" rx="7" fill="#083344" fill-opacity="0.7" stroke="#06b6d4" stroke-opacity="0.5" stroke-width="1.2" />
+  <rect x="25" y="24" width="18" height="15" rx="2" stroke="#22d3ee" stroke-width="1.4" fill="none" />
+  <line x1="25" y1="28.5" x2="43" y2="28.5" stroke="#22d3ee" stroke-width="1.2" />
+  <circle cx="28" cy="26.5" r="0.9" fill="#22d3ee" />
+  <circle cx="31" cy="26.5" r="0.9" fill="#22d3ee" />
 
-  <text x="54" y="30" class="category">PLATAFORMA WEB</text>
-  <text x="54" y="42" class="arrow">webuildsites.com.br ↗</text>
+  <text x="56" y="30" class="category">PLATAFORMA WEB</text>
+  <text x="56" y="42" class="arrow">webuildsites.com.br ↗</text>
+
+  <!-- ================= 3D HOLOGRAPHIC DISPLAY / PRISM (TOP RIGHT) ================= -->
+  <!-- Anel Radar 3D -->
+  <g class="radar-ring">
+    <ellipse cx="375" cy="42" rx="27" ry="11" stroke="#22d3ee" stroke-width="1" stroke-dasharray="8 4 2 4" stroke-opacity="0.6" fill="none" filter="url(#cyanGlow)" />
+  </g>
+
+  <!-- Display 3D Isométrico Flutuante -->
+  <g class="holo-3d">
+    <!-- Base Isometric Plane -->
+    <polygon points="375,30 392,39 375,48 358,39" fill="#0284c7" fill-opacity="0.5" stroke="#38bdf8" stroke-width="1" />
+    
+    <!-- Camada Elevada Holográfica (Interface 3D) -->
+    <polygon points="375,20 392,29 375,38 358,29" fill="#082f49" fill-opacity="0.85" stroke="#00f0ff" stroke-width="1.2" />
+    
+    <!-- Linhas de Wireframe de Conexão Entre Camadas -->
+    <line x1="358" y1="29" x2="358" y2="39" stroke="#00f0ff" stroke-width="1" stroke-dasharray="2 1" />
+    <line x1="392" y1="29" x2="392" y2="39" stroke="#00f0ff" stroke-width="1" stroke-dasharray="2 1" />
+    <line x1="375" y1="38" x2="375" y2="48" stroke="#00f0ff" stroke-width="1.2" />
+    
+    <circle cx="375" cy="29" r="2.5" fill="#00f0ff" filter="url(#cyanGlow)" />
+  </g>
 
   <!-- Title -->
-  <text x="20" y="70" class="card-title">WebuildSites • Criação de Sites</text>
+  <text x="20" y="73" class="card-title">WebuildSites • Criação de Sites</text>
 
   <!-- Description -->
-  <text x="20" y="90" class="card-desc">Plataforma para criação, publicação e gestão de websites</text>
-  <text x="20" y="105" class="card-desc">de alta conversão, hospedado em produção na Vercel.</text>
+  <text x="20" y="93" class="card-desc">Plataforma para criação, publicação e gestão de websites</text>
+  <text x="20" y="108" class="card-desc">de alta conversão, hospedado em produção na Vercel.</text>
 
   <!-- Chips -->
-  <g transform="translate(20, 116)">
+  <g transform="translate(20, 117)">
     <rect width="66" height="20" rx="5" fill="#083344" fill-opacity="0.5" stroke="#06b6d4" stroke-opacity="0.3" />
     <text x="33" y="13.5" text-anchor="middle" class="tag-txt">Next.js</text>
   </g>
-  <g transform="translate(92, 116)">
+  <g transform="translate(92, 117)">
     <rect width="78" height="20" rx="5" fill="#083344" fill-opacity="0.5" stroke="#06b6d4" stroke-opacity="0.3" />
     <text x="39" y="13.5" text-anchor="middle" class="tag-txt">TypeScript</text>
   </g>
-  <g transform="translate(176, 116)">
+  <g transform="translate(176, 117)">
     <rect width="66" height="20" rx="5" fill="#083344" fill-opacity="0.5" stroke="#06b6d4" stroke-opacity="0.3" />
     <text x="33" y="13.5" text-anchor="middle" class="tag-txt">Vercel</text>
   </g>
