@@ -1,0 +1,49 @@
+<svg width="100%" height="auto" viewBox="0 0 860 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .rank-title { font-family: 'Fira Code', monospace; font-size: 10px; font-weight: bold; letter-spacing: 1px; }
+      .rank-val { font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 20px; font-weight: 900; }
+      .rank-sub { font-family: 'Fira Code', monospace; font-size: 10px; fill: #8b949e; }
+    </style>
+  </defs>
+
+  <!-- Card 1: Commits (Rank S) -->
+  <g transform="translate(0, 0)">
+    <rect width="206" height="110" rx="12" fill="#0c0f17" stroke="#eab308" stroke-opacity="0.35" stroke-width="1.2" />
+    <rect x="87" y="14" width="32" height="32" rx="8" fill="#713f12" fill-opacity="0.4" stroke="#eab308" stroke-opacity="0.3" />
+    <path d="M103 21L97 30H103L102 38L109 29H103L103 21Z" fill="#facc15" />
+    <text x="103" y="64" fill="#facc15" text-anchor="middle" class="rank-title">COMMITS</text>
+    <text x="103" y="85" fill="#fef08a" text-anchor="middle" class="rank-val">RANK S</text>
+    <text x="103" y="100" text-anchor="middle" class="rank-sub">Consistência Alta</text>
+  </g>
+
+  <!-- Card 2: Repositories (Rank A) -->
+  <g transform="translate(218, 0)">
+    <rect width="206" height="110" rx="12" fill="#0c0f17" stroke="#06b6d4" stroke-opacity="0.35" stroke-width="1.2" />
+    <rect x="87" y="14" width="32" height="32" rx="8" fill="#164e63" fill-opacity="0.4" stroke="#06b6d4" stroke-opacity="0.3" />
+    <path d="M96 25L103 21L110 25L103 29L96 25Z M96 27.5L103 31.5L110 27.5L110 33L103 37L96 33L96 27.5Z" fill="#22d3ee" />
+    <text x="103" y="64" fill="#22d3ee" text-anchor="middle" class="rank-title">REPOSITÓRIOS</text>
+    <text x="103" y="85" fill="#a5f3fc" text-anchor="middle" class="rank-val">RANK A</text>
+    <text x="103" y="100" text-anchor="middle" class="rank-sub">37+ Criados</text>
+  </g>
+
+  <!-- Card 3: Experience (Rank S) -->
+  <g transform="translate(436, 0)">
+    <rect width="206" height="110" rx="12" fill="#0c0f17" stroke="#10b981" stroke-opacity="0.35" stroke-width="1.2" />
+    <rect x="87" y="14" width="32" height="32" rx="8" fill="#064e3b" fill-opacity="0.4" stroke="#10b981" stroke-opacity="0.3" />
+    <path d="M103 22C106 22 109 23.5 109 26C109 31 103 36 103 36C103 36 97 31 97 26C97 23.5 100 22 103 22Z" fill="#34d399" />
+    <text x="103" y="64" fill="#34d399" text-anchor="middle" class="rank-title">EXPERIÊNCIA</text>
+    <text x="103" y="85" fill="#a7f3d0" text-anchor="middle" class="rank-val">RANK S</text>
+    <text x="103" y="100" text-anchor="middle" class="rank-sub">Full Stack</text>
+  </g>
+
+  <!-- Card 4: Community (Rank A) -->
+  <g transform="translate(654, 0)">
+    <rect width="206" height="110" rx="12" fill="#0c0f17" stroke="#d946ef" stroke-opacity="0.35" stroke-width="1.2" />
+    <rect x="87" y="14" width="32" height="32" rx="8" fill="#701a75" fill-opacity="0.4" stroke="#d946ef" stroke-opacity="0.3" />
+    <path d="M103 21L104.5 25.5H109L105.5 28L107 33L103 30L99 33L100.5 28L97 25.5H101.5L103 21Z" fill="#f472b6" />
+    <text x="103" y="64" fill="#f472b6" text-anchor="middle" class="rank-title">ENGAJAMENTO</text>
+    <text x="103" y="85" fill="#fbcfe8" text-anchor="middle" class="rank-val">RANK A</text>
+    <text x="103" y="100" text-anchor="middle" class="rank-sub">Ativo no GitHub</text>
+  </g>
+</svg>
