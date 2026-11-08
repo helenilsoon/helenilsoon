@@ -1,17 +1,21 @@
-<svg width="100%" height="auto" viewBox="0 0 380 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="100%" height="auto" viewBox="0 0 480 46" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
       .btn-txt { font-family: 'Fira Code', monospace; font-size: 11.5px; font-weight: bold; fill: #67e8f9; }
-      .btn-sub { font-family: 'Fira Code', monospace; font-size: 9.5px; fill: #8b949e; }
+      .btn-sub { font-family: 'Fira Code', monospace; font-size: 9.5px; fill: #94a3b8; }
     </style>
   </defs>
-  <rect x="1" y="1" width="378" height="42" rx="10" fill="#083344" fill-opacity="0.3" stroke="#06b6d4" stroke-opacity="0.5" stroke-width="1.2" />
+  <rect x="1" y="1" width="478" height="44" rx="10" fill="#083344" fill-opacity="0.35" stroke="#00f0ff" stroke-opacity="0.5" stroke-width="1.2" />
   
   <!-- Globe icon -->
-  <circle cx="24" cy="22" r="8" stroke="#22d3ee" stroke-width="1.5" fill="none" />
-  <line x1="16" y1="22" x2="32" y2="22" stroke="#22d3ee" stroke-width="1.2" />
-  <ellipse cx="24" cy="22" rx="4" ry="8" stroke="#22d3ee" stroke-width="1.2" fill="none" />
+  <circle cx="26" cy="23" r="9" stroke="#22d3ee" stroke-width="1.5" fill="none" />
+  <line x1="17" y1="23" x2="35" y2="23" stroke="#22d3ee" stroke-width="1.2" />
+  <ellipse cx="26" cy="23" rx="4.5" ry="9" stroke="#22d3ee" stroke-width="1.2" fill="none" />
 
-  <text x="42" y="21" class="btn-txt">PORTFÓLIO PESSOAL LIVE ↗</text>
-  <text x="42" y="33" class="btn-sub">helenilsoon.github.io/portifolio</text>
+  <text x="48" y="21" class="btn-txt">PORTFÓLIO PESSOAL LIVE ↗</text>
+  <text x="48" y="34" class="btn-sub">helenilsoon.github.io/portifolio</text>
+  
+  <!-- Status Badge Right -->
+  <rect x="400" y="14" width="62" height="18" rx="5" fill="#002b3d" stroke="#00f0ff" stroke-opacity="0.4" stroke-width="1" />
+  <text x="431" y="26.5" font-family="'Fira Code', monospace" font-size="8.5" fill="#67e8f9" font-weight="700" text-anchor="middle">ONLINE</text>
 </svg>

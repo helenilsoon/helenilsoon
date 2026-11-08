@@ -1,0 +1,216 @@
+<svg width="100%" height="auto" viewBox="0 0 360 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="stackGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <linearGradient id="stackBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0.7" />
+    </linearGradient>
+    <linearGradient id="pillGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0d1527" />
+      <stop offset="100%" stop-color="#0a101d" />
+    </linearGradient>
+    <style>
+      .head-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; font-weight: 700; fill: #ffffff; letter-spacing: 0.5px; }
+      .cat-title { font-family: 'Fira Code', monospace; font-size: 10px; font-weight: 700; letter-spacing: 1px; fill: #00f0ff; }
+      .pill-lbl { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 10.5px; font-weight: 600; fill: #e2e8f0; }
+    </style>
+  </defs>
+
+  <!-- Card Background -->
+  <rect x="1" y="1" width="358" height="398" rx="14" fill="#080b12" stroke="url(#stackBorderGrad)" stroke-width="1.5" />
+  
+  <!-- Ambient Neon Light -->
+  <circle cx="320" cy="40" r="50" fill="#00f0ff" fill-opacity="0.06" filter="url(#stackGlow)" />
+  <circle cx="40" cy="360" r="50" fill="#a855f7" fill-opacity="0.05" filter="url(#stackGlow)" />
+
+  <!-- Card Header -->
+  <g transform="translate(18, 16)">
+    <rect width="24" height="24" rx="6" fill="#002b3d" stroke="#00f0ff" stroke-opacity="0.6" stroke-width="1" />
+    <path d="M13 5L7 13H13L11 19L17 11H11L13 5Z" fill="#00f0ff" />
+    <text x="32" y="17" class="head-title">Stack de Produção</text>
+    <circle cx="310" cy="12" r="3.5" fill="#10b981" />
+    <circle cx="310" cy="12" r="6" stroke="#10b981" stroke-opacity="0.4" stroke-width="1" />
+  </g>
+
+  <!-- ================= 1. FRONTEND ================= -->
+  <text x="18" y="66" class="cat-title">⚡ FRONTEND &amp; MOBILE</text>
+
+  <!-- Linha 1 Frontend -->
+  <!-- React -->
+  <g transform="translate(18, 76)">
+    <rect width="102" height="26" rx="6" fill="url(#pillGrad)" stroke="#00f0ff" stroke-opacity="0.35" stroke-width="1" />
+    <!-- React Icon -->
+    <ellipse cx="14" cy="13" rx="7" ry="2.6" stroke="#00f0ff" stroke-width="1" fill="none" transform="rotate(30 14 13)" />
+    <ellipse cx="14" cy="13" rx="7" ry="2.6" stroke="#00f0ff" stroke-width="1" fill="none" transform="rotate(90 14 13)" />
+    <ellipse cx="14" cy="13" rx="7" ry="2.6" stroke="#00f0ff" stroke-width="1" fill="none" transform="rotate(150 14 13)" />
+    <circle cx="14" cy="13" r="1.3" fill="#00f0ff" />
+    <text x="28" y="17" class="pill-lbl">React</text>
+  </g>
+
+  <!-- Next.js -->
+  <g transform="translate(126, 76)">
+    <rect width="102" height="26" rx="6" fill="url(#pillGrad)" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1" />
+    <circle cx="14" cy="13" r="7" fill="#000000" stroke="#ffffff" stroke-width="0.8" />
+    <path d="M12 9V17M12 10L16.5 16.5" stroke="#ffffff" stroke-width="1.1" stroke-linecap="round" />
+    <text x="28" y="17" class="pill-lbl">Next.js 14</text>
+  </g>
+
+  <!-- TypeScript -->
+  <g transform="translate(234, 76)">
+    <rect width="108" height="26" rx="6" fill="url(#pillGrad)" stroke="#3178c6" stroke-opacity="0.4" stroke-width="1" />
+    <rect x="7" y="6" width="14" height="14" rx="2" fill="#3178c6" />
+    <text x="14" y="16.5" font-family="monospace" font-size="7.5" font-weight="900" fill="#ffffff" text-anchor="middle">TS</text>
+    <text x="28" y="17" class="pill-lbl">TypeScript</text>
+  </g>
+
+  <!-- Linha 2 Frontend -->
+  <!-- Flutter -->
+  <g transform="translate(18, 108)">
+    <rect width="102" height="26" rx="6" fill="url(#pillGrad)" stroke="#02569b" stroke-opacity="0.4" stroke-width="1" />
+    <!-- Flutter wing icon -->
+    <path d="M15 7L10 12L12 14L18.5 7.5L15 7Z" fill="#54c5f8" />
+    <path d="M12.5 14.5L9.5 17.5L12 20L17.5 14.5L12.5 14.5Z" fill="#01579b" />
+    <path d="M11.5 15.5L14 13L16 15L13.5 17.5L11.5 15.5Z" fill="#29b6f6" />
+    <text x="28" y="17" class="pill-lbl">Flutter</text>
+  </g>
+
+  <!-- Tailwind -->
+  <g transform="translate(126, 108)">
+    <rect width="102" height="26" rx="6" fill="url(#pillGrad)" stroke="#06b6d4" stroke-opacity="0.35" stroke-width="1" />
+    <!-- Tailwind wave -->
+    <path d="M9 13C10 11 11.5 10.5 13.5 11.5C12.5 13.5 11 14 9 13ZM13.5 13C14.5 11 16 10.5 18 11.5C17 13.5 15.5 14 13.5 13Z" fill="#38bdf8" />
+    <text x="28" y="17" class="pill-lbl">Tailwind</text>
+  </g>
+
+  <!-- JavaScript -->
+  <g transform="translate(234, 108)">
+    <rect width="108" height="26" rx="6" fill="url(#pillGrad)" stroke="#eab308" stroke-opacity="0.35" stroke-width="1" />
+    <rect x="7" y="6" width="14" height="14" rx="2" fill="#f7df1e" />
+    <text x="14" y="16.5" font-family="monospace" font-size="7.5" font-weight="900" fill="#000000" text-anchor="middle">JS</text>
+    <text x="28" y="17" class="pill-lbl">JavaScript</text>
+  </g>
+
+  <!-- ================= 2. BACKEND & DATABASES ================= -->
+  <text x="18" y="158" class="cat-title">⚙️ BACKEND &amp; DATABASES</text>
+
+  <!-- Linha 1 Backend -->
+  <!-- Go / Golang -->
+  <g transform="translate(18, 168)">
+    <rect width="102" height="26" rx="6" fill="url(#pillGrad)" stroke="#00add8" stroke-opacity="0.35" stroke-width="1" />
+    <rect x="7" y="6" width="14" height="14" rx="3" fill="#00add8" />
+    <text x="14" y="16.5" font-family="monospace" font-size="7" font-weight="900" fill="#ffffff" text-anchor="middle">GO</text>
+    <text x="28" y="17" class="pill-lbl">Golang</text>
+  </g>
+
+  <!-- Node.js -->
+  <g transform="translate(126, 168)">
+    <rect width="102" height="26" rx="6" fill="url(#pillGrad)" stroke="#22c55e" stroke-opacity="0.35" stroke-width="1" />
+    <path d="M14 6L20 9.5V16.5L14 20L8 16.5V9.5L14 6Z" stroke="#22c55e" stroke-width="1" fill="#14532d" fill-opacity="0.5" />
+    <text x="14" y="15.5" font-family="monospace" font-size="7.5" font-weight="bold" fill="#4ade80" text-anchor="middle">N</text>
+    <text x="28" y="17" class="pill-lbl">Node.js</text>
+  </g>
+
+  <!-- Python -->
+  <g transform="translate(234, 168)">
+    <rect width="108" height="26" rx="6" fill="url(#pillGrad)" stroke="#3b82f6" stroke-opacity="0.35" stroke-width="1" />
+    <circle cx="11.5" cy="11.5" r="4.5" fill="#3b82f6" />
+    <circle cx="16.5" cy="14.5" r="4.5" fill="#eab308" />
+    <text x="28" y="17" class="pill-lbl">Python</text>
+  </g>
+
+  <!-- Linha 2 Backend -->
+  <!-- PHP -->
+  <g transform="translate(18, 200)">
+    <rect width="102" height="26" rx="6" fill="url(#pillGrad)" stroke="#777bb4" stroke-opacity="0.35" stroke-width="1" />
+    <ellipse cx="14" cy="13" rx="7" ry="4.5" fill="#777bb4" />
+    <text x="14" y="15.5" font-family="monospace" font-size="5.5" font-weight="bold" fill="#ffffff" text-anchor="middle">PHP</text>
+    <text x="28" y="17" class="pill-lbl">PHP 8+</text>
+  </g>
+
+  <!-- PostgreSQL -->
+  <g transform="translate(126, 200)">
+    <rect width="102" height="26" rx="6" fill="url(#pillGrad)" stroke="#336791" stroke-opacity="0.4" stroke-width="1" />
+    <!-- Postgres DB Cylinder -->
+    <ellipse cx="14" cy="9.5" rx="5" ry="2" stroke="#38bdf8" stroke-width="1" fill="none" />
+    <path d="M9 9.5V16C9 17.1 11.2 18 14 18C16.8 18 19 17.1 19 16V9.5" stroke="#38bdf8" stroke-width="1" fill="none" />
+    <text x="28" y="17" class="pill-lbl">Postgres</text>
+  </g>
+
+  <!-- Redis -->
+  <g transform="translate(234, 200)">
+    <rect width="108" height="26" rx="6" fill="url(#pillGrad)" stroke="#ef4444" stroke-opacity="0.35" stroke-width="1" />
+    <!-- Redis diamond/layer -->
+    <path d="M14 8L19 11L14 14L9 11L14 8Z" fill="#ef4444" />
+    <path d="M9 13.5L14 16.5L19 13.5" stroke="#dc2626" stroke-width="1" fill="none" />
+    <text x="28" y="17" class="pill-lbl">Redis</text>
+  </g>
+
+  <!-- ================= 3. DEVOPS & CLOUD ================= -->
+  <text x="18" y="250" class="cat-title">🚀 DEVOPS, CLOUD &amp; SYSTEM</text>
+
+  <!-- Linha 1 DevOps -->
+  <!-- Docker -->
+  <g transform="translate(18, 260)">
+    <rect width="102" height="26" rx="6" fill="url(#pillGrad)" stroke="#0284c7" stroke-opacity="0.4" stroke-width="1" />
+    <!-- Whale + blocks -->
+    <rect x="9" y="10" width="2" height="2" fill="#38bdf8" />
+    <rect x="12" y="10" width="2" height="2" fill="#38bdf8" />
+    <rect x="12" y="7.5" width="2" height="2" fill="#38bdf8" />
+    <path d="M8 12.5C8 15 11 16.5 15 16.5C18.5 16.5 20 14 20 13H8Z" fill="#0284c7" />
+    <text x="28" y="17" class="pill-lbl">Docker</text>
+  </g>
+
+  <!-- Cloudflare -->
+  <g transform="translate(126, 260)">
+    <rect width="102" height="26" rx="6" fill="url(#pillGrad)" stroke="#f97316" stroke-opacity="0.4" stroke-width="1" />
+    <!-- Cloud icon -->
+    <path d="M11 15.5H18C19 15.5 19.5 14.5 19.5 13.5C19.5 12.5 18.5 11.8 17.5 12C17.2 10.5 15.8 9.5 14.2 9.5C12.8 9.5 11.6 10.4 11.2 11.8C10.5 12 10 12.6 10 13.3C10 14.5 10.5 15.5 11 15.5Z" fill="#f97316" />
+    <text x="28" y="17" class="pill-lbl">Cloudflare</text>
+  </g>
+
+  <!-- Vercel -->
+  <g transform="translate(234, 260)">
+    <rect width="108" height="26" rx="6" fill="url(#pillGrad)" stroke="#ffffff" stroke-opacity="0.3" stroke-width="1" />
+    <path d="M14 8L19.5 17.5H8.5L14 8Z" fill="#ffffff" />
+    <text x="28" y="17" class="pill-lbl">Vercel</text>
+  </g>
+
+  <!-- Linha 2 DevOps -->
+  <!-- Linux -->
+  <g transform="translate(18, 292)">
+    <rect width="102" height="26" rx="6" fill="url(#pillGrad)" stroke="#fbbf24" stroke-opacity="0.35" stroke-width="1" />
+    <!-- Linux Penguin body & beak -->
+    <ellipse cx="14" cy="13" rx="4.5" ry="6" fill="#1e293b" stroke="#e2e8f0" stroke-width="0.8" />
+    <circle cx="14" cy="11.5" r="1.5" fill="#fbbf24" />
+    <text x="28" y="17" class="pill-lbl">Linux</text>
+  </g>
+
+  <!-- Git -->
+  <g transform="translate(126, 292)">
+    <rect width="102" height="26" rx="6" fill="url(#pillGrad)" stroke="#f05032" stroke-opacity="0.4" stroke-width="1" />
+    <path d="M10 16L17 9M17 9L15 7M17 9L19 11" stroke="#f05032" stroke-width="1.2" stroke-linecap="round" />
+    <circle cx="10" cy="16" r="2" fill="#f05032" />
+    <circle cx="17" cy="9" r="2" fill="#f05032" />
+    <text x="28" y="17" class="pill-lbl">Git</text>
+  </g>
+
+  <!-- Actions -->
+  <g transform="translate(234, 292)">
+    <rect width="108" height="26" rx="6" fill="url(#pillGrad)" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1" />
+    <circle cx="14" cy="13" r="5" stroke="#38bdf8" stroke-width="1" fill="none" stroke-dasharray="2 1.5" />
+    <path d="M13 11L16 13L13 15V11Z" fill="#38bdf8" />
+    <text x="28" y="17" class="pill-lbl">CI/CD</text>
+  </g>
+
+  <!-- Footer Micro Status -->
+  <g transform="translate(18, 345)">
+    <rect width="324" height="38" rx="8" fill="#04060a" stroke="#1e293b" stroke-width="1" />
+    <text x="12" y="18" font-family="'Fira Code', monospace" font-size="9" fill="#00f0ff" font-weight="700">> PRODUCTION_ENVIRONMENT: READY</text>
+    <text x="12" y="30" font-family="'Fira Code', monospace" font-size="8.5" fill="#64748b">Modern Microservices • Clean Architecture • Dockerized</text>
+    <circle cx="310" cy="19" r="3" fill="#22d3ee" />
+  </g>
+</svg>
