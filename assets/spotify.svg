@@ -1,9 +1,30 @@
 <svg width="100%" height="auto" viewBox="0 0 425 90" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
+    <!-- Filtro de Brilho Neon Pré-existente (preservado para o círculo decorativo) -->
     <filter id="spotGlow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="3.5" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
+
+    <!-- Filtro de Brilho Neon Seguro Contra Clipping -->
+    <filter id="neonCometGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur1" />
+      <feGaussianBlur stdDeviation="1.5" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur1" />
+        <feMergeNode in="blur2" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Gradiente Neon Multicor Vibrante (Ciano -> Azul -> Violeta -> Magenta) -->
+    <linearGradient id="neonCometGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="30%" stop-color="#3b82f6" />
+      <stop offset="65%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
     <style>
       .track-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; font-weight: 700; fill: #ffffff; }
       .track-sub { font-family: 'Fira Code', monospace; font-size: 10px; fill: #94a3b8; }
@@ -18,16 +39,17 @@
       .b3 { animation: eqBar3 0.7s ease-in-out infinite 0.4s; }
       .b4 { animation: eqBar4 0.9s ease-in-out infinite 0.1s; }
 
-      /* Laser Sequencial: Janela 80% a 100% (6.0s a 7.5s) */
-      @keyframes laserSweep5 {
-        0%, 80% { stroke-dashoffset: 1022; opacity: 0; }
-        82% { opacity: 1; }
-        98% { opacity: 1; }
-        100% { stroke-dashoffset: 0; opacity: 0; }
+      /* Cometa Neon Sequencial: Card 7 (9.0s a 10.5s / 42.857% a 50.000%) */
+      @keyframes cometSweep7 {
+        0%, 42.857% { stroke-dashoffset: 1001; opacity: 0; }
+        43.357% { opacity: 1; }
+        49.500% { opacity: 1; }
+        50.000%, 100% { stroke-dashoffset: 0; opacity: 0; }
       }
-      .laser-beam {
-        stroke-dasharray: 160 862;
-        animation: laserSweep5 7.5s linear infinite;
+      .comet-beam {
+        stroke-dasharray: 180 821;
+        animation: cometSweep7 21s linear infinite;
+        pointer-events: none;
       }
     </style>
   </defs>
@@ -35,8 +57,8 @@
   <!-- Base Card Static Border -->
   <rect x="1" y="1" width="423" height="88" rx="12" fill="#06090e" stroke="#10b981" stroke-opacity="0.25" stroke-width="1.2" />
   
-  <!-- Laser Neon Traveling Beam (Passo 5 - Final do ciclo) -->
-  <rect x="1" y="1" width="423" height="88" rx="12" fill="none" stroke="#10b981" stroke-width="2.2" stroke-linecap="round" class="laser-beam" filter="url(#spotGlow)" />
+  <!-- Feixe Cometa Neon Viajante (Card 7: 9.0s - 10.5s) -->
+  <rect x="1" y="1" width="423" height="88" rx="12" fill="none" stroke="url(#neonCometGrad)" stroke-width="2.5" stroke-linecap="round" class="comet-beam" filter="url(#neonCometGlow)" pointer-events="none" />
 
   <circle cx="390" cy="22" r="30" fill="#10b981" fill-opacity="0.08" filter="url(#spotGlow)" />
 
