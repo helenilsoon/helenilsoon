@@ -1,0 +1,68 @@
+<svg width="100%" height="auto" viewBox="0 0 900 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22d3ee" /><stop offset="50%" stop-color="#99f6e4" /><stop offset="100%" stop-color="#d946ef" />
+    </linearGradient>
+    <linearGradient id="cardBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.8" /><stop offset="50%" stop-color="#3b82f6" stop-opacity="0.3" /><stop offset="100%" stop-color="#d946ef" stop-opacity="0.6" />
+    </linearGradient>
+    <linearGradient id="bgDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07090e" /><stop offset="100%" stop-color="#0c101a" />
+    </linearGradient>
+    <filter id="neonCometGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur1" />
+      <feMerge><feMergeNode in="blur1" /><feMergeNode in="SourceGraphic" /></feMerge>
+    </filter>
+    <linearGradient id="neonCometGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" /><stop offset="30%" stop-color="#3b82f6" /><stop offset="65%" stop-color="#a855f7" /><stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+    <style>
+      .title-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 900; font-size: 38px; letter-spacing: -0.5px; }
+      .mono-text { font-family: 'Fira Code', monospace; }
+      .badge-text { font-size: 11px; font-weight: 600; }
+      @keyframes pulseDot { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+      .pulse { animation: pulseDot 2s infinite ease-in-out; }
+      @keyframes cometRun { 0% { stroke-dashoffset: 2344; } 100% { stroke-dashoffset: 0; } }
+      .comet-beam { stroke-dasharray: 280 2064; animation: cometRun 6s linear infinite; pointer-events: none; }
+    </style>
+  </defs>
+
+  <rect x="2" y="2" width="896" height="276" rx="16" fill="url(#bgDark)" stroke="url(#cardBorder)" stroke-width="1.5" />
+  <rect class="comet-beam" x="2" y="2" width="896" height="276" rx="16" fill="none" stroke="url(#neonCometGrad)" stroke-width="2.6" stroke-linecap="round" filter="url(#neonCometGlow)" />
+
+  <circle cx="830" cy="40" r="90" fill="#06b6d4" fill-opacity="0.12" />
+  <circle cx="70" cy="240" r="80" fill="#d946ef" fill-opacity="0.08" />
+
+  <!-- TOP BAR -->
+  <rect x="36" y="26" width="310" height="26" rx="13" fill="#083344" fill-opacity="0.7" stroke="#06b6d4" stroke-opacity="0.4" stroke-width="1" />
+  <circle cx="50" cy="39" r="4.5" fill="#22d3ee" class="pulse" />
+  <text x="63" y="43" fill="#67e8f9" class="mono-text badge-text">STATUS: ONLINE • READY TO BUILD</text>
+  <text x="864" y="43" fill="#f472b6" class="mono-text badge-text" text-anchor="end">REMOTE (UTC-3)</text>
+
+  <!-- HERO -->
+  <text x="36" y="98" fill="url(#neonGradient)" class="title-text">HELENILSON OLIVEIRA</text>
+  <text x="36" y="125" fill="#67e8f9" class="mono-text" font-size="13" font-weight="600">&gt; FULL STACK ARCHITECT</text>
+  <text x="36" y="148" fill="#8b949e" class="mono-text" font-size="12">Building scalable digital solutions and high-performance architectures.</text>
+
+  <!-- CHIPS -->
+  <g transform="translate(36, 185)">
+    <rect width="195" height="64" rx="12" fill="#000000" fill-opacity="0.65" stroke="#06b6d4" stroke-opacity="0.35" stroke-width="1.2" />
+    <text x="24" y="30" fill="#22d3ee" class="mono-text" font-size="10" font-weight="bold">ORGANIZAÇÃO</text>
+    <text x="24" y="49" fill="#ffffff" class="mono-text" font-size="13" font-weight="bold">@WebuildSoft</text>
+  </g>
+  <g transform="translate(245, 185)">
+    <rect width="195" height="64" rx="12" fill="#000000" fill-opacity="0.65" stroke="#d946ef" stroke-opacity="0.35" stroke-width="1.2" />
+    <text x="24" y="30" fill="#f472b6" class="mono-text" font-size="10" font-weight="bold">REPOSITÓRIOS</text>
+    <text x="24" y="49" fill="#ffffff" class="mono-text" font-size="13" font-weight="bold">45+ Criados</text>
+  </g>
+  <g transform="translate(454, 185)">
+    <rect width="195" height="64" rx="12" fill="#000000" fill-opacity="0.65" stroke="#10b981" stroke-opacity="0.35" stroke-width="1.2" />
+    <text x="24" y="30" fill="#34d399" class="mono-text" font-size="10" font-weight="bold">DISPONIBILIDADE</text>
+    <text x="24" y="49" fill="#ffffff" class="mono-text" font-size="13" font-weight="bold">Disponivel</text>
+  </g>
+  <g transform="translate(663, 185)">
+    <rect width="201" height="64" rx="12" fill="#000000" fill-opacity="0.65" stroke="#c084fc" stroke-opacity="0.35" stroke-width="1.2" />
+    <text x="24" y="30" fill="#c084fc" class="mono-text" font-size="10" font-weight="bold">ATUAÇÃO</text>
+    <text x="24" y="49" fill="#ffffff" class="mono-text" font-size="13" font-weight="bold">Full Stack Dev</text>
+  </g>
+</svg>

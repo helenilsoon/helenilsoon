@@ -1,0 +1,43 @@
+<svg width="100%" height="auto" viewBox="0 0 420 146" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cardBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.8" /><stop offset="100%" stop-color="#047857" stop-opacity="0.3" />
+    </linearGradient>
+    <style>
+      .card-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 14px; font-weight: 700; fill: #ffffff; }
+      .card-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; fill: #94a3b8; }
+      .tag-txt { font-family: 'Fira Code', monospace; font-size: 9px; font-weight: 600; fill: #34d399; }
+      .category { font-family: 'Fira Code', monospace; font-size: 10px; font-weight: bold; fill: #34d399; letter-spacing: 0.5px; }
+      .arrow { font-family: 'Fira Code', monospace; font-size: 11.5px; fill: #34d399; font-weight: bold; }
+    </style>
+  </defs>
+
+  <rect x="1.5" y="1.5" width="417" height="143" rx="14" fill="#080c14" stroke="url(#cardBorder)" stroke-width="1.4" />
+  <circle cx="375" cy="42" r="32" fill="#10b981" fill-opacity="0.08" />
+
+  <text x="24" y="30" class="category">PLATAFORMA SAAS</text>
+  <text x="24" y="44" class="arrow">myrifa.com.br</text>
+
+  
+    <g transform="translate(375, 42)">
+      <circle cx="0" cy="0" r="18" fill="#ca8a04" stroke="#fef08a" stroke-width="1.2" />
+      <polygon points="0,-4 5,0 0,4 -5,0" fill="#064e3b" stroke="#34d399" stroke-width="0.9" />
+    </g>
+
+  <text x="20" y="73" class="card-title">MyRifa SaaS</text>
+  <text x="20" y="93" class="card-desc">Plataforma com Pix automatico</text>
+  <text x="20" y="108" class="card-desc">Cloudflare R2 e Supabase</text>
+
+  <g transform="translate(20, 117)">
+    <rect width="70" height="20" rx="5" fill="#064e3b" fill-opacity="0.4" stroke="#10b981" stroke-opacity="0.3" />
+    <text x="35" y="13.5" text-anchor="middle" class="tag-txt">Next.js</text>
+  </g>
+  <g transform="translate(98, 117)">
+    <rect width="74" height="20" rx="5" fill="#064e3b" fill-opacity="0.4" stroke="#10b981" stroke-opacity="0.3" />
+    <text x="37" y="13.5" text-anchor="middle" class="tag-txt">Supabase</text>
+  </g>
+  <g transform="translate(180, 117)">
+    <rect width="70" height="20" rx="5" fill="#064e3b" fill-opacity="0.4" stroke="#10b981" stroke-opacity="0.3" />
+    <text x="35" y="13.5" text-anchor="middle" class="tag-txt">Pix</text>
+  </g>
+</svg>
