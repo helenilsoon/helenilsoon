@@ -212,21 +212,3 @@ const handler = {
 
 export default handler;
 
-// Suporte para rodar localmente via Node.js
-if (import.meta.url === `file://${process.argv[1]}`) {
-  import("http").then(({ default: http }) => {
-    const server = http.createServer(async (req, res) => {
-      const fullUrl = "http://" + (req.headers.host || "localhost:8787") + req.url;
-      const request = new Request(fullUrl);
-      const workerResponse = await handler.fetch(request);
-      
-      res.writeHead(workerResponse.status || 200, Object.fromEntries(workerResponse.headers.entries()));
-      const body = await workerResponse.text();
-      res.end(body);
-    });
-
-    server.listen(8787, () => {
-      console.log("Neon API Worker test server running on http://localhost:8787");
-    });
-  });
-}
