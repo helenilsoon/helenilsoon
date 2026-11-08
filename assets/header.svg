@@ -22,6 +22,25 @@
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
 
+    <!-- Filtro de Brilho Neon Seguro Contra Clipping -->
+    <filter id="neonCometGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur1" />
+      <feGaussianBlur stdDeviation="1.5" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur1" />
+        <feMergeNode in="blur2" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Gradiente Neon Multicor Vibrante (Ciano -> Azul -> Violeta -> Magenta) -->
+    <linearGradient id="neonCometGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="30%" stop-color="#3b82f6" />
+      <stop offset="65%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
     <style>
       .title-text {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -43,11 +62,27 @@
       .pulse {
         animation: pulseDot 2s infinite ease-in-out;
       }
+
+      /* Sincronização do Cometa Neon: Janela 1 (0.0s a 1.5s / 0.000% a 7.143%) */
+      @keyframes cometSweep1 {
+        0% { stroke-dashoffset: 2317; opacity: 0; }
+        0.500% { opacity: 1; }
+        6.643% { opacity: 1; }
+        7.143%, 100% { stroke-dashoffset: 0; opacity: 0; }
+      }
+      .comet-beam {
+        stroke-dasharray: 300 2017;
+        animation: cometSweep1 21s linear infinite;
+        pointer-events: none;
+      }
     </style>
   </defs>
 
   <!-- Background Base Container -->
   <rect x="2" y="2" width="896" height="276" rx="16" fill="url(#bgDark)" stroke="url(#cardBorder)" stroke-width="1.5" />
+
+  <!-- Feixe Cometa Neon Viajante (Card 1: 0.0s - 1.5s) -->
+  <rect class="comet-beam" x="2" y="2" width="896" height="276" rx="16" fill="none" stroke="url(#neonCometGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#neonCometGlow)" pointer-events="none" />
 
   <!-- Ambient Light Orbs -->
   <circle cx="830" cy="40" r="90" fill="#06b6d4" fill-opacity="0.12" filter="url(#cyanGlow)" />
