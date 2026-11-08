@@ -16,21 +16,21 @@
       .category { font-family: 'Fira Code', monospace; font-size: 10px; font-weight: bold; fill: #60a5fa; letter-spacing: 0.5px; }
       .arrow { font-family: 'Fira Code', monospace; font-size: 11.5px; fill: #60a5fa; font-weight: bold; }
 
-      @keyframes float3D {
+      /* Pulso de Feixe de Dados em Loop */
+      @keyframes pulseBeam {
+        0% { stroke-dashoffset: 60; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes floatChain {
         0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-4px) rotate(2deg); }
+        50% { transform: translateY(-4px) rotate(3deg); }
       }
-      @keyframes spin3D {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-      .holo-3d {
-        animation: float3D 3.2s ease-in-out infinite;
+      .chain-3d {
+        animation: floatChain 3.4s ease-in-out infinite;
         transform-origin: 375px 42px;
       }
-      .spin-ring {
-        animation: spin3D 7s linear infinite;
-        transform-origin: 375px 42px;
+      .beam-pulse {
+        animation: pulseBeam 2s linear infinite;
       }
     </style>
   </defs>
@@ -49,24 +49,22 @@
   <text x="56" y="30" class="category">SaaS LINK MANAGEMENT</text>
   <text x="56" y="42" class="arrow">lnki.pro ↗</text>
 
-  <!-- ================= 3D HOLOGRAPHIC NETWORK PRISM (TOP RIGHT) ================= -->
-  <!-- Anel Orbital 3D -->
-  <g class="spin-ring">
-    <ellipse cx="375" cy="42" rx="27" ry="10" stroke="#60a5fa" stroke-width="1" stroke-dasharray="6 3 2 3" stroke-opacity="0.6" fill="none" filter="url(#blueGlow)" />
-    <circle cx="402" cy="42" r="2.2" fill="#38bdf8" />
-  </g>
+  <!-- ================= ELOS DE CORRENTE / NÓ DE CONEXÃO 3D COM PULSO ================= -->
+  <g class="chain-3d">
+    <!-- Elo 1: Inclinado em 3D (Face Esquerda) -->
+    <ellipse cx="366" cy="38" rx="13" ry="8" stroke="#3b82f6" stroke-width="3.5" fill="none" transform="rotate(-35 366 38)" />
+    <ellipse cx="366" cy="38" rx="13" ry="8" stroke="#93c5fd" stroke-width="1.2" fill="none" transform="rotate(-35 366 38)" />
 
-  <!-- Prisma Isométrico 3D (Hub de Conexões) -->
-  <g class="holo-3d">
-    <!-- Top Face -->
-    <polygon points="375,28 390,36 375,44 360,36" fill="#3b82f6" fill-opacity="0.75" stroke="#93c5fd" stroke-width="1" />
-    <!-- Left Face -->
-    <polygon points="360,36 375,44 375,58 360,50" fill="#1e3a5f" fill-opacity="0.85" stroke="#3b82f6" stroke-width="1" />
-    <!-- Right Face -->
-    <polygon points="375,44 390,36 390,50 375,58" fill="#1d4ed8" fill-opacity="0.85" stroke="#60a5fa" stroke-width="1" />
-    
-    <!-- Link central 3D -->
-    <circle cx="375" cy="36" r="3" fill="#67e8f9" filter="url(#blueGlow)" />
+    <!-- Elo 2: Entrelaçado passando por dentro (Face Direita) -->
+    <ellipse cx="384" cy="46" rx="13" ry="8" stroke="#00f0ff" stroke-width="3.5" fill="none" transform="rotate(35 384 46)" />
+    <ellipse cx="384" cy="46" rx="13" ry="8" stroke="#ffffff" stroke-width="1.2" fill="none" transform="rotate(35 384 46)" />
+
+    <!-- Feixe Laser de Dados Pulsando no Ponto de Conexão Central -->
+    <circle cx="375" cy="42" r="4.5" fill="#00f0ff" filter="url(#blueGlow)" />
+    <circle cx="375" cy="42" r="2" fill="#ffffff" />
+
+    <!-- Pulso de dados que viaja pelo contorno -->
+    <path d="M356 32 C366 22 384 32 394 42 C384 52 366 62 356 52 Z" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="10 20" fill="none" class="beam-pulse" filter="url(#blueGlow)" />
   </g>
 
   <!-- Title -->

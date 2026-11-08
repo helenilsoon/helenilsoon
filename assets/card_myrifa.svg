@@ -8,6 +8,16 @@
       <stop offset="0%" stop-color="#10b981" stop-opacity="0.8" />
       <stop offset="100%" stop-color="#047857" stop-opacity="0.3" />
     </linearGradient>
+    <linearGradient id="goldCoinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="50%" stop-color="#eab308" />
+      <stop offset="100%" stop-color="#854d0e" />
+    </linearGradient>
+    <linearGradient id="goldEdgeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ca8a04" />
+      <stop offset="100%" stop-color="#713f12" />
+    </linearGradient>
+
     <style>
       .card-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 14px; font-weight: 700; fill: #ffffff; }
       .card-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; fill: #94a3b8; }
@@ -15,21 +25,24 @@
       .category { font-family: 'Fira Code', monospace; font-size: 10px; font-weight: bold; fill: #34d399; letter-spacing: 0.5px; }
       .arrow { font-family: 'Fira Code', monospace; font-size: 11.5px; fill: #34d399; font-weight: bold; }
 
-      @keyframes float3D {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-4px) rotate(2deg); }
+      /* Rotação 3D da Moeda Pix no Eixo Y */
+      @keyframes flipCoin3D {
+        0% { transform: scaleX(1) translateY(0px); }
+        25% { transform: scaleX(0.2) translateY(-3px); }
+        50% { transform: scaleX(-1) translateY(0px); }
+        75% { transform: scaleX(-0.2) translateY(-3px); }
+        100% { transform: scaleX(1) translateY(0px); }
       }
-      @keyframes spin3DRing {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+      @keyframes floatAura {
+        0%, 100% { r: 30px; opacity: 0.2; }
+        50% { r: 38px; opacity: 0.5; }
       }
-      .holo-3d {
-        animation: float3D 3.5s ease-in-out infinite;
+      .coin-3d {
+        animation: flipCoin3D 5s ease-in-out infinite;
         transform-origin: 375px 42px;
       }
-      .ring-rot {
-        animation: spin3DRing 8s linear infinite;
-        transform-origin: 375px 42px;
+      .aura-coin {
+        animation: floatAura 3s ease-in-out infinite;
       }
     </style>
   </defs>
@@ -38,7 +51,7 @@
   <rect x="1.5" y="1.5" width="417" height="143" rx="14" fill="#080c14" stroke="url(#cardBorder)" stroke-width="1.4" />
 
   <!-- Ambient Light -->
-  <circle cx="375" cy="42" r="35" fill="#10b981" fill-opacity="0.08" filter="url(#emeraldGlow)" />
+  <circle cx="375" cy="42" r="32" fill="#10b981" class="aura-coin" filter="url(#emeraldGlow)" />
 
   <!-- Technical Icon Box Left -->
   <rect x="20" y="18" width="28" height="28" rx="7" fill="#064e3b" fill-opacity="0.7" stroke="#10b981" stroke-opacity="0.5" stroke-width="1.2" />
@@ -47,24 +60,25 @@
   <text x="56" y="30" class="category">PLATAFORMA SAAS</text>
   <text x="56" y="42" class="arrow">myrifa.com.br ↗</text>
 
-  <!-- ================= 3D HOLOGRAPHIC COIN / TICKET CUBE (TOP RIGHT) ================= -->
-  <!-- Anel Orbital 3D -->
-  <g class="ring-rot">
-    <ellipse cx="375" cy="42" rx="28" ry="10" stroke="#34d399" stroke-width="1" stroke-dasharray="4 3" stroke-opacity="0.6" fill="none" filter="url(#emeraldGlow)" />
-    <circle cx="403" cy="42" r="2" fill="#10b981" />
-  </g>
+  <!-- ================= MOEDA PIX 3D ISOMÉTRICA DOURADA/ESMERALDA ================= -->
+  <!-- Sombra 3D da moeda -->
+  <ellipse cx="375" cy="64" rx="20" ry="5" fill="#000000" fill-opacity="0.6" filter="url(#emeraldGlow)" />
 
-  <!-- Objeto 3D Isométrico Flutuante (Cubo de Sorteio/Cotas) -->
-  <g class="holo-3d">
-    <!-- Top Face -->
-    <polygon points="375,28 390,36 375,44 360,36" fill="#10b981" fill-opacity="0.75" stroke="#34d399" stroke-width="1" />
-    <!-- Left Face -->
-    <polygon points="360,36 375,44 375,60 360,52" fill="#064e3b" fill-opacity="0.85" stroke="#10b981" stroke-width="1" />
-    <!-- Right Face -->
-    <polygon points="375,44 390,36 390,52 375,60" fill="#047857" fill-opacity="0.85" stroke="#34d399" stroke-width="1" />
+  <!-- Grupo da Moeda 3D com rotação Y -->
+  <g class="coin-3d">
+    <!-- Borda Cilíndrica 3D (Espessura da Moeda) -->
+    <path d="M357 42 C357 51 393 51 393 42 V48 C393 57 357 57 357 48 Z" fill="url(#goldEdgeGrad)" stroke="#a16207" stroke-width="0.8" />
     
-    <!-- Centro / Emblema Pix 3D -->
-    <circle cx="375" cy="36" r="3" fill="#ffffff" filter="url(#emeraldGlow)" />
+    <!-- Face Superior da Moeda 3D -->
+    <ellipse cx="375" cy="42" rx="18" ry="8.5" fill="url(#goldCoinGrad)" stroke="#fef08a" stroke-width="1.2" />
+    <ellipse cx="375" cy="42" rx="15" ry="7" fill="none" stroke="#ca8a04" stroke-width="0.8" stroke-dasharray="2 1.5" />
+    
+    <!-- Símbolo Pix em Relevo Dourado/Verde no Centro -->
+    <g transform="translate(375, 42)">
+      <!-- Losango Pix Central -->
+      <polygon points="0,-4 5,0 0,4 -5,0" fill="#064e3b" stroke="#34d399" stroke-width="0.9" />
+      <polygon points="0,-2 2.5,0 0,2 -2.5,0" fill="#34d399" />
+    </g>
   </g>
 
   <!-- Title -->

@@ -9,6 +9,10 @@
       <stop offset="50%" stop-color="#0284c7" stop-opacity="0.4" />
       <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.7" />
     </linearGradient>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#082f49" />
+      <stop offset="100%" stop-color="#021526" />
+    </linearGradient>
     <style>
       .card-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 14px; font-weight: 700; fill: #ffffff; }
       .card-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; fill: #94a3b8; }
@@ -16,21 +20,13 @@
       .category { font-family: 'Fira Code', monospace; font-size: 10px; font-weight: bold; fill: #22d3ee; letter-spacing: 0.5px; }
       .arrow { font-family: 'Fira Code', monospace; font-size: 11.5px; fill: #22d3ee; font-weight: bold; }
 
-      @keyframes float3D {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-4px) rotate(-1.5deg); }
+      /* Camadas de Interface Flutuando à Frente do Monitor */
+      @keyframes floatUI {
+        0%, 100% { transform: translateY(0px) translateX(0px); }
+        50% { transform: translateY(-5px) translateX(-2px); }
       }
-      @keyframes radarSpin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-      .holo-3d {
-        animation: float3D 3.8s ease-in-out infinite;
-        transform-origin: 375px 42px;
-      }
-      .radar-ring {
-        animation: radarSpin 9s linear infinite;
-        transform-origin: 375px 42px;
+      .ui-layer {
+        animation: floatUI 3.5s ease-in-out infinite;
       }
     </style>
   </defs>
@@ -51,26 +47,32 @@
   <text x="56" y="30" class="category">PLATAFORMA WEB</text>
   <text x="56" y="42" class="arrow">webuildsites.com.br ↗</text>
 
-  <!-- ================= 3D HOLOGRAPHIC DISPLAY / PRISM (TOP RIGHT) ================= -->
-  <!-- Anel Radar 3D -->
-  <g class="radar-ring">
-    <ellipse cx="375" cy="42" rx="27" ry="11" stroke="#22d3ee" stroke-width="1" stroke-dasharray="8 4 2 4" stroke-opacity="0.6" fill="none" filter="url(#cyanGlow)" />
-  </g>
+  <!-- ================= MONITOR / DISPLAY HOLOGRÁFICO 3D COM CAMADAS ================= -->
+  <!-- Base e Pedestal do Monitor 3D -->
+  <ellipse cx="375" cy="62" rx="14" ry="4" fill="#032541" stroke="#00f0ff" stroke-width="0.8" />
+  <line x1="375" y1="50" x2="375" y2="60" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" />
 
-  <!-- Display 3D Isométrico Flutuante -->
-  <g class="holo-3d">
-    <!-- Base Isometric Plane -->
-    <polygon points="375,30 392,39 375,48 358,39" fill="#0284c7" fill-opacity="0.5" stroke="#38bdf8" stroke-width="1" />
-    
-    <!-- Camada Elevada Holográfica (Interface 3D) -->
-    <polygon points="375,20 392,29 375,38 358,29" fill="#082f49" fill-opacity="0.85" stroke="#00f0ff" stroke-width="1.2" />
-    
-    <!-- Linhas de Wireframe de Conexão Entre Camadas -->
-    <line x1="358" y1="29" x2="358" y2="39" stroke="#00f0ff" stroke-width="1" stroke-dasharray="2 1" />
-    <line x1="392" y1="29" x2="392" y2="39" stroke="#00f0ff" stroke-width="1" stroke-dasharray="2 1" />
-    <line x1="375" y1="38" x2="375" y2="48" stroke="#00f0ff" stroke-width="1.2" />
-    
-    <circle cx="375" cy="29" r="2.5" fill="#00f0ff" filter="url(#cyanGlow)" />
+  <!-- Moldura e Tela do Monitor 3D Isométrico (Perspectiva) -->
+  <!-- Gabinete Traseiro com Profundidade 3D -->
+  <polygon points="356,22 396,16 396,48 356,54" fill="#021526" stroke="#00f0ff" stroke-opacity="0.5" stroke-width="1.2" />
+  <!-- Tela Emissiva de Luz Ciano -->
+  <polygon points="358,24 394,18 394,46 358,52" fill="url(#screenGrad)" stroke="#38bdf8" stroke-width="0.8" />
+
+  <!-- Linha do topo do browser no monitor -->
+  <line x1="358" y1="28" x2="394" y2="22" stroke="#22d3ee" stroke-opacity="0.5" stroke-width="0.8" />
+  <circle cx="362" cy="28.5" r="0.8" fill="#22d3ee" />
+  <circle cx="365" cy="28" r="0.8" fill="#22d3ee" />
+
+  <!-- Camada Holográfica de UI Flutuante (Salto para Fora da Tela em 3D) -->
+  <g class="ui-layer">
+    <!-- Janela de Componente Web Flutuando em 3D à Frente -->
+    <polygon points="350,28 382,23 382,45 350,50" fill="#0c4a6e" fill-opacity="0.85" stroke="#00f0ff" stroke-width="1.2" filter="url(#cyanGlow)" />
+    <!-- Barras de Layout da Interface Flutuante -->
+    <line x1="354" y1="34" x2="372" y2="31" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" />
+    <line x1="354" y1="39" x2="378" y2="35.5" stroke="#38bdf8" stroke-width="1" stroke-linecap="round" />
+    <line x1="354" y1="44" x2="368" y2="41.5" stroke="#38bdf8" stroke-width="1" stroke-linecap="round" />
+    <!-- Botão Call to Action Neon na UI -->
+    <polygon points="372,40 379,39 379,43 372,44" fill="#00f0ff" />
   </g>
 
   <!-- Title -->

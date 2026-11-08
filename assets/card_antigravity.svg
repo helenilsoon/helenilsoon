@@ -9,6 +9,10 @@
       <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.4" />
       <stop offset="100%" stop-color="#d946ef" stop-opacity="0.8" />
     </linearGradient>
+    <linearGradient id="phoneScreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#082f49" />
+      <stop offset="100%" stop-color="#2e1065" />
+    </linearGradient>
     <style>
       .card-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 15px; font-weight: 700; fill: #ffffff; }
       .card-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11.5px; fill: #94a3b8; }
@@ -16,27 +20,26 @@
       .category { font-family: 'Fira Code', monospace; font-size: 10px; font-weight: bold; fill: #00f0ff; letter-spacing: 0.5px; }
       .arrow { font-family: 'Fira Code', monospace; font-size: 11.5px; fill: #f472b6; font-weight: bold; }
 
-      @keyframes float3D {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-5px) rotate(1.5deg); }
+      /* Camada de App Saltando para fora do Smartphone 3D */
+      @keyframes floatAppLayer {
+        0%, 100% { transform: translateY(0px) translateX(0px); }
+        50% { transform: translateY(-7px) translateX(-4px); }
       }
-      @keyframes spin3D {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+      @keyframes floatDevice {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-3px); }
       }
-      .holo-device {
-        animation: float3D 3.8s ease-in-out infinite;
-        transform-origin: 790px 62px;
+      .phone-body {
+        animation: floatDevice 4s ease-in-out infinite;
       }
-      .spin-ring {
-        animation: spin3D 8s linear infinite;
-        transform-origin: 790px 62px;
+      .app-layer {
+        animation: floatAppLayer 3.2s ease-in-out infinite;
       }
     </style>
   </defs>
 
   <rect x="1.5" y="1.5" width="857" height="123" rx="14" fill="#080c14" stroke="url(#cardGrad)" stroke-width="1.4" />
-  <circle cx="790" cy="62" r="45" fill="#d946ef" fill-opacity="0.08" filter="url(#fuchsiaCyanGlow)" />
+  <circle cx="790" cy="62" r="45" fill="#00f0ff" fill-opacity="0.08" filter="url(#fuchsiaCyanGlow)" />
 
   <!-- Vector Mobile Device / Chip Icon Left -->
   <rect x="24" y="20" width="30" height="30" rx="8" fill="#083344" stroke="#00f0ff" stroke-opacity="0.5" stroke-width="1.2" />
@@ -53,31 +56,44 @@
   <text x="24" y="93" class="card-desc">Companion client mobile em Flutter (Android) e servidor de alta performance em Go 1.24 com WebSockets e túneis Cloudflare Zero Trust.</text>
 
   <!-- Chips Top Right -->
-  <g transform="translate(530, 20)">
+  <g transform="translate(520, 20)">
     <rect width="86" height="22" rx="6" fill="#083344" fill-opacity="0.6" stroke="#00f0ff" stroke-opacity="0.4" />
     <text x="43" y="15" text-anchor="middle" class="tag-txt">Go 1.24</text>
   </g>
-  <g transform="translate(626, 20)">
+  <g transform="translate(616, 20)">
     <rect width="100" height="22" rx="6" fill="#701a75" fill-opacity="0.6" stroke="#d946ef" stroke-opacity="0.4" />
     <text x="50" y="15" text-anchor="middle" class="tag-txt" fill="#f472b6">Flutter Client</text>
   </g>
 
-  <!-- ================= 3D HOLOGRAPHIC SMARTPHONE / CLIENT DEVICE (FAR RIGHT) ================= -->
-  <!-- Anel Orbital 3D -->
-  <g class="spin-ring">
-    <ellipse cx="790" cy="62" rx="42" ry="15" stroke="#00f0ff" stroke-width="1.1" stroke-dasharray="6 4 2 4" stroke-opacity="0.6" fill="none" filter="url(#fuchsiaCyanGlow)" />
-    <circle cx="832" cy="62" r="2.5" fill="#d946ef" />
+  <!-- ================= SMARTPHONE 3D ISOMÉTRICO COM CAMADA DE APP SALTANDO ================= -->
+  <!-- Sombra 3D no chão -->
+  <ellipse cx="790" cy="104" rx="30" ry="8" fill="#000000" fill-opacity="0.6" filter="url(#fuchsiaCyanGlow)" />
+
+  <!-- Corpo do Smartphone 3D Isométrico -->
+  <g class="phone-body">
+    <!-- Gabinete Lateral 3D (Espessura do Aparelho) -->
+    <polygon points="765,40 795,22 815,35 785,53" fill="#032541" stroke="#00f0ff" stroke-opacity="0.6" stroke-width="1.2" />
+    <polygon points="765,40 765,95 785,108 785,53" fill="#021526" stroke="#00f0ff" stroke-width="1.2" />
+    <polygon points="785,53 815,35 815,90 785,108" fill="#082f49" stroke="#38bdf8" stroke-width="1.2" />
+
+    <!-- Tela do Smartphone com Brilho Gradiente -->
+    <polygon points="786,55 813,38 813,88 786,105" fill="url(#phoneScreen)" stroke="#00f0ff" stroke-width="1" />
+    
+    <!-- Câmera Frontal Notch / Alto-falante -->
+    <circle cx="799" cy="46" r="1.2" fill="#00f0ff" />
   </g>
 
-  <!-- Smartphone Isométrico 3D Flutuante -->
-  <g class="holo-device">
-    <!-- Base Traseira 3D -->
-    <polygon points="790,38 812,50 790,62 768,50" fill="#032541" stroke="#00f0ff" stroke-width="1.2" />
-    <polygon points="768,50 790,62 790,82 768,70" fill="#021526" stroke="#00f0ff" stroke-width="1.1" />
-    <polygon points="790,62 812,50 812,70 790,82" fill="#0c4a6e" stroke="#38bdf8" stroke-width="1.1" />
+  <!-- Camada de Interface do App (Saltando para Fora da Tela em 3D) -->
+  <g class="app-layer">
+    <!-- Card Holográfico Flutuando no Ar à Frente do Smartphone -->
+    <polygon points="772,50 802,32 802,68 772,86" fill="#701a75" fill-opacity="0.85" stroke="#d946ef" stroke-width="1.3" filter="url(#fuchsiaCyanGlow)" />
+    
+    <!-- Linhas e Componentes da Tela do App -->
+    <line x1="778" y1="58" x2="794" y2="48" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" />
+    <line x1="778" y1="64" x2="798" y2="52" stroke="#f472b6" stroke-width="1" stroke-linecap="round" />
+    <line x1="778" y1="70" x2="792" y2="61" stroke="#38bdf8" stroke-width="1" stroke-linecap="round" />
 
-    <!-- Camada Elevada (Tela Holográfica do App) -->
-    <polygon points="790,30 810,41 790,52 770,41" fill="#701a75" fill-opacity="0.75" stroke="#f472b6" stroke-width="1.1" />
-    <circle cx="790" cy="41" r="3" fill="#00f0ff" filter="url(#fuchsiaCyanGlow)" />
+    <!-- Botão de Ação Flutuante no App -->
+    <circle cx="788" cy="74" r="3" fill="#00f0ff" filter="url(#fuchsiaCyanGlow)" />
   </g>
 </svg>

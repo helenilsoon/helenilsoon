@@ -9,6 +9,10 @@
       <stop offset="50%" stop-color="#a855f7" stop-opacity="0.4" />
       <stop offset="100%" stop-color="#ec4899" stop-opacity="0.7" />
     </linearGradient>
+    <linearGradient id="giftTopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f472b6" />
+      <stop offset="100%" stop-color="#c026d3" />
+    </linearGradient>
     <style>
       .card-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 14px; font-weight: 700; fill: #ffffff; }
       .card-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; fill: #94a3b8; }
@@ -16,21 +20,14 @@
       .category { font-family: 'Fira Code', monospace; font-size: 10px; font-weight: bold; fill: #e879f9; letter-spacing: 0.5px; }
       .arrow { font-family: 'Fira Code', monospace; font-size: 11.5px; fill: #e879f9; font-weight: bold; }
 
-      @keyframes float3D {
+      /* Flutuação da Caixa de Presente 3D */
+      @keyframes floatGift {
         0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-4px) rotate(-2deg); }
+        50% { transform: translateY(-4px) rotate(2deg); }
       }
-      @keyframes spin3D {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-      .holo-3d {
-        animation: float3D 3.6s ease-in-out infinite;
-        transform-origin: 375px 42px;
-      }
-      .spin-ring {
-        animation: spin3D 8.5s linear infinite;
-        transform-origin: 375px 42px;
+      .gift-3d {
+        animation: floatGift 3.6s ease-in-out infinite;
+        transform-origin: 375px 44px;
       }
     </style>
   </defs>
@@ -49,27 +46,35 @@
   <text x="56" y="30" class="category">E-COMMERCE &amp; STORE</text>
   <text x="56" y="42" class="arrow">lenamimos.com.br ↗</text>
 
-  <!-- ================= 3D HOLOGRAPHIC GIFT / PACKAGE CUBE (TOP RIGHT) ================= -->
-  <!-- Anel Orbital 3D -->
-  <g class="spin-ring">
-    <ellipse cx="375" cy="42" rx="27" ry="10" stroke="#f472b6" stroke-width="1" stroke-dasharray="5 3 2 3" stroke-opacity="0.6" fill="none" filter="url(#fuchsiaGlow)" />
-    <circle cx="402" cy="42" r="2.2" fill="#e879f9" />
-  </g>
+  <!-- ================= CAIXA DE PRESENTE 3D COM FITA EM RELEVO E LAÇO ================= -->
+  <!-- Sombra 3D da caixa -->
+  <ellipse cx="375" cy="64" rx="22" ry="6" fill="#000000" fill-opacity="0.5" filter="url(#fuchsiaGlow)" />
 
-  <!-- Caixa de Presente 3D Isométrica -->
-  <g class="holo-3d">
-    <!-- Top Face -->
-    <polygon points="375,28 390,36 375,44 360,36" fill="#d946ef" fill-opacity="0.75" stroke="#f5d0fe" stroke-width="1" />
-    <!-- Left Face -->
-    <polygon points="360,36 375,44 375,58 360,50" fill="#701a75" fill-opacity="0.85" stroke="#d946ef" stroke-width="1" />
-    <!-- Right Face -->
-    <polygon points="375,44 390,36 390,50 375,58" fill="#831843" fill-opacity="0.85" stroke="#ec4899" stroke-width="1" />
-    
-    <!-- Fita Neon Cruzada no Topo -->
-    <line x1="367.5" y1="32" x2="382.5" y2="40" stroke="#ffffff" stroke-width="1.2" />
-    <line x1="382.5" y1="32" x2="367.5" y2="40" stroke="#ffffff" stroke-width="1.2" />
-    <!-- Laço Neon 3D -->
-    <circle cx="375" cy="36" r="2.8" fill="#f43f5e" filter="url(#fuchsiaGlow)" />
+  <g class="gift-3d">
+    <!-- Corpo da Caixa: Face Esquerda -->
+    <polygon points="358,36 375,44 375,60 358,52" fill="#701a75" stroke="#d946ef" stroke-width="1" />
+    <!-- Corpo da Caixa: Face Direita -->
+    <polygon points="375,44 392,36 392,52 375,60" fill="#831843" stroke="#ec4899" stroke-width="1" />
+
+    <!-- Fita Neon Vertical na Face Esquerda -->
+    <polygon points="364,39 369,41 369,57 364,55" fill="#f43f5e" />
+    <!-- Fita Neon Vertical na Face Direita -->
+    <polygon points="381,41 386,39 386,55 381,57" fill="#f43f5e" />
+
+    <!-- Tampa da Caixa Saliente em 3D (Ligeiramente maior) -->
+    <polygon points="375,27 394,36 375,45 356,36" fill="url(#giftTopGrad)" stroke="#fbcfe8" stroke-width="1.2" />
+
+    <!-- Fita Neon Cruzada no Topo da Tampa -->
+    <polygon points="364,32 368,34 386,40 382,38" fill="#f43f5e" />
+    <polygon points="382,34 386,32 368,40 364,38" fill="#f43f5e" />
+
+    <!-- Laço Volumétrico 3D Duplo no Topo -->
+    <!-- Alça Esquerda do Laço -->
+    <path d="M375 29 C368 20 362 23 372 28 Z" fill="#fb7185" stroke="#ffffff" stroke-width="0.8" filter="url(#fuchsiaGlow)" />
+    <!-- Alça Direita do Laço -->
+    <path d="M375 29 C382 20 388 23 378 28 Z" fill="#f43f5e" stroke="#ffffff" stroke-width="0.8" filter="url(#fuchsiaGlow)" />
+    <!-- Nó Central do Laço com Brilho Neon -->
+    <circle cx="375" cy="28.5" r="2.5" fill="#ffffff" filter="url(#fuchsiaGlow)" />
   </g>
 
   <!-- Title -->
