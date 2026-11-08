@@ -1,0 +1,14 @@
+{
+  "name": "neon-profile-cards",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "worker.js",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "test": "node test_worker.js"
+  },
+  "devDependencies": {
+    "wrangler": "^4.158.0"
+  }
+}
