@@ -65,13 +65,7 @@
 
 ---
 
-### 🌐 Cyber Core 3D • Sistema Holográfico
 
-<p align="center">
-  <img src="./assets/cube_3d.svg" width="100%" alt="Cyber Core 3D Isométrico Holográfico" />
-</p>
-
----
 
 ### 🏆 Conquistas &amp; Ranks do Desenvolvedor
 
