@@ -12,19 +12,19 @@
       <h4>💻 Frontend Architecture</h4>
       <p>
         <a href="https://skillicons.dev">
-          <img src="https://skillicons.dev/icons?i=react,next,ts,js,flutter,tailwind,html,css" alt="Frontend Stacks" />
+          <img src="https://skillicons.dev/icons?i=react,next,ts,js,flutter,tailwind,html,css" height="34" alt="Frontend Stacks" />
         </a>
       </p>
       <h4>⚙️ Backend &amp; Databases</h4>
       <p>
         <a href="https://skillicons.dev">
-          <img src="https://skillicons.dev/icons?i=golang,nodejs,php,python,postgres,sqlite,redis" alt="Backend Stacks" />
+          <img src="https://skillicons.dev/icons?i=golang,nodejs,php,python,postgres,sqlite,redis" height="34" alt="Backend Stacks" />
         </a>
       </p>
       <h4>🚀 DevOps &amp; Cloud</h4>
       <p>
         <a href="https://skillicons.dev">
-          <img src="https://skillicons.dev/icons?i=docker,cloudflare,vercel,git,githubactions,linux,vscode" alt="DevOps Tools" />
+          <img src="https://skillicons.dev/icons?i=docker,cloudflare,vercel,git,githubactions,linux,vscode" height="34" alt="DevOps Tools" />
         </a>
       </p>
     </td>
