@@ -8,28 +8,28 @@
 
 <table>
   <tr>
-    <!-- Coluna 1: Stack de Produção Neon com Ícones Vetoriais Amplos (~60% / 520px) -->
-    <td width="520" valign="top">
-      <img src="./assets/card_stack.svg" width="520" alt="Stack de Produção Neon" />
+    <!-- Coluna 1: Stack de Produção Neon (50% / 425px) -->
+    <td width="425" valign="top">
+      <img src="./assets/card_stack.svg" width="425" alt="Stack de Produção Neon" />
     </td>
-    <!-- Coluna 2: Conexões Oficiais, Organização e Spotify (~40% / 340px) -->
-    <td width="340" valign="top">
+    <!-- Coluna 2: Conexões Oficiais, Organização e Spotify (50% / 425px) -->
+    <td width="425" valign="top">
       <a href="https://helenilsoon.github.io/portifolio/" target="_blank">
-        <img src="./assets/btn_portfolio.svg" width="340" alt="Portfólio Live" />
+        <img src="./assets/btn_portfolio.svg" width="425" alt="Portfólio Live" />
       </a>
       <br/><br/>
       <a href="mailto:helenilsoon@gmail.com">
-        <img src="./assets/btn_email.svg" width="340" alt="E-mail Direto" />
+        <img src="./assets/btn_email.svg" width="425" alt="E-mail Direto" />
       </a>
       <br/><br/>
       <a href="https://github.com/WebuildSoft" target="_blank">
-        <img src="./assets/btn_org.svg" width="340" alt="Organização Oficial WebuildSoft" />
+        <img src="./assets/btn_org.svg" width="425" alt="Organização Oficial WebuildSoft" />
       </a>
       <br/><br/>
-      <img src="./assets/btn_location.svg" width="340" alt="Localização" />
+      <img src="./assets/btn_location.svg" width="425" alt="Localização" />
       <br/><br/>
       <a href="https://open.spotify.com" target="_blank">
-        <img src="./assets/spotify.svg" width="340" alt="Coding Soundtrack Spotify" />
+        <img src="./assets/spotify.svg" width="425" alt="Coding Soundtrack Spotify" />
       </a>
     </td>
   </tr>
