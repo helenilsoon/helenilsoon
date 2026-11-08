@@ -1,49 +1,113 @@
-<svg width="100%" height="auto" viewBox="0 0 860 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="100%" height="auto" viewBox="0 0 860 116" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
+    <filter id="rankGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
     <style>
-      .rank-title { font-family: 'Fira Code', monospace; font-size: 10px; font-weight: bold; letter-spacing: 1px; }
-      .rank-val { font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 20px; font-weight: 900; }
-      .rank-sub { font-family: 'Fira Code', monospace; font-size: 10px; fill: #8b949e; }
+      .rank-title { font-family: 'Fira Code', monospace; font-size: 10px; font-weight: 700; letter-spacing: 1px; }
+      .rank-val { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 21px; font-weight: 900; letter-spacing: 0.5px; }
+      .rank-sub { font-family: 'Fira Code', monospace; font-size: 10px; fill: #94a3b8; }
+
+      @keyframes floatGem1 { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-4px) rotate(2deg); } }
+      @keyframes floatGem2 { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-4px) rotate(-2deg); } }
+      @keyframes floatGem3 { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-4px) rotate(1.5deg); } }
+      @keyframes floatGem4 { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-4px) rotate(-1.5deg); } }
+
+      .gem-1 { animation: floatGem1 3.2s ease-in-out infinite; transform-origin: 103px 26px; }
+      .gem-2 { animation: floatGem2 3.6s ease-in-out infinite 0.4s; transform-origin: 103px 26px; }
+      .gem-3 { animation: floatGem3 3.4s ease-in-out infinite 0.8s; transform-origin: 103px 26px; }
+      .gem-4 { animation: floatGem4 3.8s ease-in-out infinite 0.2s; transform-origin: 103px 26px; }
     </style>
   </defs>
 
-  <!-- Card 1: Commits (Rank S) -->
+  <!-- ================= CARD 1: COMMITS (RANK S - OCTAEDRO 3D OURO) ================= -->
   <g transform="translate(0, 0)">
-    <rect width="206" height="110" rx="12" fill="#0c0f17" stroke="#eab308" stroke-opacity="0.35" stroke-width="1.2" />
-    <rect x="87" y="14" width="32" height="32" rx="8" fill="#713f12" fill-opacity="0.4" stroke="#eab308" stroke-opacity="0.3" />
-    <path d="M103 21L97 30H103L102 38L109 29H103L103 21Z" fill="#facc15" />
-    <text x="103" y="64" fill="#facc15" text-anchor="middle" class="rank-title">COMMITS</text>
-    <text x="103" y="85" fill="#fef08a" text-anchor="middle" class="rank-val">RANK S</text>
-    <text x="103" y="100" text-anchor="middle" class="rank-sub">Consistência Alta</text>
+    <rect width="206" height="116" rx="14" fill="#080c14" stroke="#eab308" stroke-opacity="0.45" stroke-width="1.3" />
+    <circle cx="103" cy="28" r="22" fill="#eab308" fill-opacity="0.08" filter="url(#rankGlow)" />
+    
+    <!-- Octaedro 3D Ouro Flutuante -->
+    <g class="gem-1">
+      <!-- Top Pyramid Face Left -->
+      <polygon points="103,12 91,26 103,32" fill="#ca8a04" stroke="#facc15" stroke-width="1" />
+      <!-- Top Pyramid Face Right -->
+      <polygon points="103,12 115,26 103,32" fill="#eab308" stroke="#fef08a" stroke-width="1" />
+      <!-- Bottom Pyramid Face Left -->
+      <polygon points="91,26 103,42 103,32" fill="#854d0e" stroke="#facc15" stroke-width="1" />
+      <!-- Bottom Pyramid Face Right -->
+      <polygon points="115,26 103,42 103,32" fill="#a16207" stroke="#fde047" stroke-width="1" />
+      <!-- Highlight Specular Point -->
+      <circle cx="103" cy="22" r="1.5" fill="#ffffff" filter="url(#rankGlow)" />
+    </g>
+
+    <text x="103" y="66" fill="#facc15" text-anchor="middle" class="rank-title">COMMITS</text>
+    <text x="103" y="88" fill="#fef08a" text-anchor="middle" class="rank-val">RANK S</text>
+    <text x="103" y="104" text-anchor="middle" class="rank-sub">Consistência Alta</text>
   </g>
 
-  <!-- Card 2: Repositories (Rank A) -->
+  <!-- ================= CARD 2: REPOSITÓRIOS (RANK A - CUBO 3D CIANO) ================= -->
   <g transform="translate(218, 0)">
-    <rect width="206" height="110" rx="12" fill="#0c0f17" stroke="#06b6d4" stroke-opacity="0.35" stroke-width="1.2" />
-    <rect x="87" y="14" width="32" height="32" rx="8" fill="#164e63" fill-opacity="0.4" stroke="#06b6d4" stroke-opacity="0.3" />
-    <path d="M96 25L103 21L110 25L103 29L96 25Z M96 27.5L103 31.5L110 27.5L110 33L103 37L96 33L96 27.5Z" fill="#22d3ee" />
-    <text x="103" y="64" fill="#22d3ee" text-anchor="middle" class="rank-title">REPOSITÓRIOS</text>
-    <text x="103" y="85" fill="#a5f3fc" text-anchor="middle" class="rank-val">RANK A</text>
-    <text x="103" y="100" text-anchor="middle" class="rank-sub">37+ Criados</text>
+    <rect width="206" height="116" rx="14" fill="#080c14" stroke="#00f0ff" stroke-opacity="0.45" stroke-width="1.3" />
+    <circle cx="103" cy="28" r="22" fill="#00f0ff" fill-opacity="0.08" filter="url(#rankGlow)" />
+    
+    <!-- Cubo Isométrico 3D Ciano Flutuante -->
+    <g class="gem-2">
+      <!-- Top Face -->
+      <polygon points="103,14 116,21 103,28 90,21" fill="#00f0ff" fill-opacity="0.8" stroke="#67e8f9" stroke-width="1" />
+      <!-- Left Face -->
+      <polygon points="90,21 103,28 103,40 90,33" fill="#0284c7" stroke="#38bdf8" stroke-width="1" />
+      <!-- Right Face -->
+      <polygon points="103,28 116,21 116,33 103,40" fill="#0369a1" stroke="#00f0ff" stroke-width="1" />
+      <!-- Wireframe Core -->
+      <circle cx="103" cy="21" r="1.5" fill="#ffffff" filter="url(#rankGlow)" />
+    </g>
+
+    <text x="103" y="66" fill="#00f0ff" text-anchor="middle" class="rank-title">REPOSITÓRIOS</text>
+    <text x="103" y="88" fill="#a5f3fc" text-anchor="middle" class="rank-val">RANK A</text>
+    <text x="103" y="104" text-anchor="middle" class="rank-sub">37+ Criados</text>
   </g>
 
-  <!-- Card 3: Experience (Rank S) -->
+  <!-- ================= CARD 3: EXPERIÊNCIA (RANK S - ESCUDO 3D ESMERALDA) ================= -->
   <g transform="translate(436, 0)">
-    <rect width="206" height="110" rx="12" fill="#0c0f17" stroke="#10b981" stroke-opacity="0.35" stroke-width="1.2" />
-    <rect x="87" y="14" width="32" height="32" rx="8" fill="#064e3b" fill-opacity="0.4" stroke="#10b981" stroke-opacity="0.3" />
-    <path d="M103 22C106 22 109 23.5 109 26C109 31 103 36 103 36C103 36 97 31 97 26C97 23.5 100 22 103 22Z" fill="#34d399" />
-    <text x="103" y="64" fill="#34d399" text-anchor="middle" class="rank-title">EXPERIÊNCIA</text>
-    <text x="103" y="85" fill="#a7f3d0" text-anchor="middle" class="rank-val">RANK S</text>
-    <text x="103" y="100" text-anchor="middle" class="rank-sub">Full Stack</text>
+    <rect width="206" height="116" rx="14" fill="#080c14" stroke="#10b981" stroke-opacity="0.45" stroke-width="1.3" />
+    <circle cx="103" cy="28" r="22" fill="#10b981" fill-opacity="0.08" filter="url(#rankGlow)" />
+    
+    <!-- Escudo / Diamante 3D Esmeralda Flutuante -->
+    <g class="gem-3">
+      <!-- Top Facet Left -->
+      <polygon points="103,13 90,22 103,27" fill="#10b981" stroke="#34d399" stroke-width="1" />
+      <!-- Top Facet Right -->
+      <polygon points="103,13 116,22 103,27" fill="#34d399" stroke="#6ee7b7" stroke-width="1" />
+      <!-- Lower Body Facet Left -->
+      <polygon points="90,22 103,42 103,27" fill="#047857" stroke="#10b981" stroke-width="1" />
+      <!-- Lower Body Facet Right -->
+      <polygon points="116,22 103,42 103,27" fill="#065f46" stroke="#34d399" stroke-width="1" />
+      <circle cx="103" cy="22" r="1.5" fill="#ffffff" filter="url(#rankGlow)" />
+    </g>
+
+    <text x="103" y="66" fill="#34d399" text-anchor="middle" class="rank-title">EXPERIÊNCIA</text>
+    <text x="103" y="88" fill="#a7f3d0" text-anchor="middle" class="rank-val">RANK S</text>
+    <text x="103" y="104" text-anchor="middle" class="rank-sub">Full Stack</text>
   </g>
 
-  <!-- Card 4: Community (Rank A) -->
+  <!-- ================= CARD 4: ENGAJAMENTO (RANK A - ESTRELA 3D MAGENTA) ================= -->
   <g transform="translate(654, 0)">
-    <rect width="206" height="110" rx="12" fill="#0c0f17" stroke="#d946ef" stroke-opacity="0.35" stroke-width="1.2" />
-    <rect x="87" y="14" width="32" height="32" rx="8" fill="#701a75" fill-opacity="0.4" stroke="#d946ef" stroke-opacity="0.3" />
-    <path d="M103 21L104.5 25.5H109L105.5 28L107 33L103 30L99 33L100.5 28L97 25.5H101.5L103 21Z" fill="#f472b6" />
-    <text x="103" y="64" fill="#f472b6" text-anchor="middle" class="rank-title">ENGAJAMENTO</text>
-    <text x="103" y="85" fill="#fbcfe8" text-anchor="middle" class="rank-val">RANK A</text>
-    <text x="103" y="100" text-anchor="middle" class="rank-sub">Ativo no GitHub</text>
+    <rect width="206" height="116" rx="14" fill="#080c14" stroke="#d946ef" stroke-opacity="0.45" stroke-width="1.3" />
+    <circle cx="103" cy="28" r="22" fill="#d946ef" fill-opacity="0.08" filter="url(#rankGlow)" />
+    
+    <!-- Prisma Estelar 3D Magenta Flutuante -->
+    <g class="gem-4">
+      <!-- Facet Top -->
+      <polygon points="103,12 112,23 103,28 94,23" fill="#e879f9" stroke="#f5d0fe" stroke-width="1" />
+      <!-- Facet Left Wing -->
+      <polygon points="94,23 103,28 103,41 89,30" fill="#a21caf" stroke="#d946ef" stroke-width="1" />
+      <!-- Facet Right Wing -->
+      <polygon points="112,23 103,28 103,41 117,30" fill="#701a75" stroke="#f472b6" stroke-width="1" />
+      <circle cx="103" cy="22" r="1.5" fill="#ffffff" filter="url(#rankGlow)" />
+    </g>
+
+    <text x="103" y="66" fill="#f472b6" text-anchor="middle" class="rank-title">ENGAJAMENTO</text>
+    <text x="103" y="88" fill="#fbcfe8" text-anchor="middle" class="rank-val">RANK A</text>
+    <text x="103" y="104" text-anchor="middle" class="rank-sub">Ativo no GitHub</text>
   </g>
 </svg>
