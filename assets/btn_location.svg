@@ -1,17 +1,26 @@
-<svg width="100%" height="auto" viewBox="0 0 340 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="100%" height="auto" viewBox="0 0 425 56" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      .btn-txt { font-family: 'Fira Code', monospace; font-size: 11.5px; font-weight: bold; fill: #f472b6; }
-      .btn-sub { font-family: 'Fira Code', monospace; font-size: 9.5px; fill: #94a3b8; }
+      .btn-cat { font-family: 'Fira Code', monospace; font-size: 9.5px; font-weight: 700; fill: #f472b6; letter-spacing: 0.5px; }
+      .btn-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13.5px; font-weight: 700; fill: #ffffff; }
+      .btn-url { font-family: 'Fira Code', monospace; font-size: 10px; fill: #94a3b8; }
     </style>
   </defs>
-  <rect x="1" y="1" width="338" height="44" rx="10" fill="#500724" fill-opacity="0.3" stroke="#ec4899" stroke-opacity="0.5" stroke-width="1.2" />
+  <rect x="1" y="1" width="423" height="54" rx="12" fill="#3b0821" fill-opacity="0.35" stroke="#ec4899" stroke-opacity="0.45" stroke-width="1.3" />
   
-  <!-- Pin Icon -->
-  <path d="M24 14C21.2 14 19 16.2 19 19C19 23 24 29 24 29C24 29 29 23 29 19C29 16.2 26.8 14 24 14ZM24 20.5C23.17 20.5 22.5 19.83 22.5 19C22.5 18.17 23.17 17.5 24 17.5C24.83 17.5 25.5 18.17 25.5 19C25.5 19.83 24.83 20.5 24 20.5Z" fill="#f472b6" />
+  <!-- Icon Box -->
+  <g transform="translate(14, 11)">
+    <rect width="34" height="34" rx="9" fill="#500724" stroke="#ec4899" stroke-opacity="0.5" stroke-width="1" />
+    <path d="M17 9C13.7 9 11 11.7 11 15C11 19.5 17 25 17 25C17 25 23 19.5 23 15C23 11.7 20.3 9 17 9ZM17 17C15.9 17 15 16.1 15 15C15 13.9 15.9 13 17 13C18.1 13 19 13.9 19 15C19 16.1 18.1 17 17 17Z" fill="#f472b6" />
+  </g>
 
-  <text x="44" y="21" class="btn-txt">LOCALIZAÇÃO &amp; DISPONIBILIDADE</text>
-  <text x="44" y="34" class="btn-sub">Manaus • Brasil (BRT / UTC-4)</text>
+  <!-- Texts -->
+  <text x="58" y="24" class="btn-cat">LOCALIZAÇÃO &amp; DISPONIBILIDADE</text>
+  <text x="58" y="42" class="btn-url">Manaus, AM • Brasil (BRT / UTC-4)</text>
 
-  <circle cx="320" cy="23" r="3.5" fill="#f472b6" />
+  <!-- Right Pill -->
+  <g transform="translate(330, 18)">
+    <rect width="81" height="20" rx="6" fill="#4a044e" stroke="#ec4899" stroke-opacity="0.4" stroke-width="1" />
+    <text x="40.5" y="13.5" font-family="'Fira Code', monospace" font-size="8.5" fill="#fbcfe8" font-weight="700" text-anchor="middle">DISPONÍVEL</text>
+  </g>
 </svg>
