@@ -1,24 +1,36 @@
 <svg width="100%" height="auto" viewBox="0 0 425 56" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <filter id="btnGlow1" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3.5" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    <!-- Filtros de Glow Neon Intenso -->
+    <filter id="cometGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur1" />
+      <feGaussianBlur stdDeviation="2" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur1" />
+        <feMergeNode in="blur2" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
     </filter>
+
+    <!-- Gradiente Neon Multicor Vibrante (Ciano -> Azul -> Roxo -> Magenta) -->
+    <linearGradient id="neonCometGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="30%" stop-color="#3b82f6" />
+      <stop offset="65%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
     <style>
       .btn-cat { font-family: 'Fira Code', monospace; font-size: 9.5px; font-weight: 700; fill: #22d3ee; letter-spacing: 0.5px; }
       .btn-url { font-family: 'Fira Code', monospace; font-size: 10px; fill: #94a3b8; }
       
-      /* Laser Sequencial: Janela 0% a 20% (0s a 1.5s) */
-      @keyframes laserSweep1 {
-        0% { stroke-dashoffset: 954; opacity: 0; }
-        2% { opacity: 1; }
-        18% { opacity: 1; }
-        20% { stroke-dashoffset: 0; opacity: 0; }
-        100% { stroke-dashoffset: 0; opacity: 0; }
+      /* Animação Contínua do Feixe Cometa Multicor */
+      @keyframes cometRun {
+        0% { stroke-dashoffset: 954; }
+        100% { stroke-dashoffset: 0; }
       }
-      .laser-beam {
-        stroke-dasharray: 140 814;
-        animation: laserSweep1 7.5s linear infinite;
+      .neon-comet {
+        stroke-dasharray: 200 754;
+        animation: cometRun 3.2s linear infinite;
       }
     </style>
   </defs>
@@ -26,8 +38,8 @@
   <!-- Base Card Static Border -->
   <rect x="1" y="1" width="423" height="54" rx="12" fill="#081e2b" fill-opacity="0.45" stroke="#00f0ff" stroke-opacity="0.25" stroke-width="1.2" />
   
-  <!-- Laser Neon Traveling Beam (Passo 1 do ciclo) -->
-  <rect x="1" y="1" width="423" height="54" rx="12" fill="none" stroke="#00f0ff" stroke-width="2.2" stroke-linecap="round" class="laser-beam" filter="url(#btnGlow1)" />
+  <!-- Feixe Cometa Neon Multicor (Ciano, Azul, Roxo e Magenta) -->
+  <rect x="1" y="1" width="423" height="54" rx="12" fill="none" stroke="url(#neonCometGrad)" stroke-width="2.6" stroke-linecap="round" class="neon-comet" filter="url(#cometGlow)" />
 
   <!-- Icon Box -->
   <g transform="translate(14, 11)">
