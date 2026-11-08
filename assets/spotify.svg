@@ -1,13 +1,9 @@
 <svg width="100%" height="auto" viewBox="0 0 425 90" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <filter id="spotGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
-    <linearGradient id="spotBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#10b981" stop-opacity="0.85" />
-      <stop offset="100%" stop-color="#064e3b" stop-opacity="0.3" />
-    </linearGradient>
     <style>
       .track-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; font-weight: 700; fill: #ffffff; }
       .track-sub { font-family: 'Fira Code', monospace; font-size: 10px; fill: #94a3b8; }
@@ -21,11 +17,27 @@
       .b2 { animation: eqBar2 1.1s ease-in-out infinite 0.2s; }
       .b3 { animation: eqBar3 0.7s ease-in-out infinite 0.4s; }
       .b4 { animation: eqBar4 0.9s ease-in-out infinite 0.1s; }
+
+      /* Laser Sequencial: Janela 80% a 100% (6.0s a 7.5s) */
+      @keyframes laserSweep5 {
+        0%, 80% { stroke-dashoffset: 1022; opacity: 0; }
+        82% { opacity: 1; }
+        98% { opacity: 1; }
+        100% { stroke-dashoffset: 0; opacity: 0; }
+      }
+      .laser-beam {
+        stroke-dasharray: 160 862;
+        animation: laserSweep5 7.5s linear infinite;
+      }
     </style>
   </defs>
 
-  <!-- Container Box -->
-  <rect x="1" y="1" width="423" height="88" rx="12" fill="#06090e" stroke="url(#spotBorder)" stroke-width="1.3" />
+  <!-- Base Card Static Border -->
+  <rect x="1" y="1" width="423" height="88" rx="12" fill="#06090e" stroke="#10b981" stroke-opacity="0.25" stroke-width="1.2" />
+  
+  <!-- Laser Neon Traveling Beam (Passo 5 - Final do ciclo) -->
+  <rect x="1" y="1" width="423" height="88" rx="12" fill="none" stroke="#10b981" stroke-width="2.2" stroke-linecap="round" class="laser-beam" filter="url(#spotGlow)" />
+
   <circle cx="390" cy="22" r="30" fill="#10b981" fill-opacity="0.08" filter="url(#spotGlow)" />
 
   <!-- Top Line: Equalizer + Tag -->
@@ -40,7 +52,7 @@
   <!-- Album / Spotify Art Icon Box -->
   <g transform="translate(16, 38)">
     <rect width="36" height="36" rx="9" fill="#042f2e" stroke="#10b981" stroke-opacity="0.5" stroke-width="1" />
-    <path d="M18 10C13.58 10 10 13.58 10 18C10 22.42 13.58 26 18 26C22.42 26 26 22.42 26 18C26 13.58 22.42 10 18 10ZM21.68 21.56C21.52 21.8 21.24 21.88 21 21.72C19.12 20.56 16.76 20.32 13.96 20.96C13.68 21.04 13.44 20.84 13.36 20.6C13.28 20.32 13.48 20.08 13.72 20C16.76 19.32 19.4 19.6 21.48 20.88C21.76 21 21.8 21.32 21.68 21.56ZM22.68 19.4C22.48 19.72 22.08 19.84 21.76 19.64C19.6 18.32 16.28 17.92 13.44 18.8C13.08 18.92 12.68 18.72 12.56 18.36C12.44 18 12.64 17.6 13 17.48C16.2 16.52 19.88 16.96 22.44 18.52C22.76 18.68 22.84 19.12 22.68 19.4Z" fill="#34d399" />
+    <path d="M18 10C13.58 10 10 13.58 10 18C10 22.42 13.58 26 18 26C22.42 26 26 22.42 26 18C26 13.58 22.42 10 18 10ZM21.68 21.56C21.52 21.8 21.24 21.88 21 21.72C19.12 20.56 16.76 20.32 13.96 20.96C13.68 21.04 13.44 20.84 13.36 20.6C13.28 20.32 13.48 20.08 13.72 20C16.76 19.32 19.4 19.6 21.48 20.88C21.76 21 21.8 21.32 21.68 21.56ZM22.68 19.4C22.48 19.72 22.08 19.84 21.76 19.64C19.6 18.32 16.28 17.92 13.44 18.8C13.08 18.92 12.68 18.72 12.56 18.36C12.44 18 12.64 17.6 13 17.48C16.2 16.52 19.88 16.96 22.44 18.52C22.76 18.68 22.84 19.12 22.68 19.4ZM22.8 17.16C20.64 15.88 16.28 15.72 13.2 16.64C12.72 16.8 12.2 16.52 12.04 16.04C11.88 15.56 12.16 15.04 12.64 14.88C16.12 13.84 20.92 14.04 23.48 15.56C23.92 15.8 24.08 16.4 23.8 16.84C23.56 17.24 23.2 17.36 22.8 17.16Z" fill="#34d399" />
   </g>
 
   <!-- Track Details -->
